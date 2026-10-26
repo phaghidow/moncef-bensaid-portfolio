@@ -1,0 +1,161 @@
+{
+  "index": "01",
+  "period": "2025 — Projet de fin d'études",
+  "role": "Développeur Full Stack — Algérie Télécom (DSI)",
+  "title": "Plateforme web de gestion de projets",
+  "description": "Conception et développement d'une plateforme interne pour la Division des Systèmes d'Information, en collaboration directe avec les encadrants de la DSI pour l'analyse des besoins et la validation.",
+  "client": "Algérie Télécom",
+  "year": "2025",
+  "metrics": [
+    { "value": "42", "label": "écrans fonctionnels" },
+    { "value": "26", "label": "tables en base de données" },
+    { "value": "4 RBAC", "label": "contrôle d'accès par rôles" }
+  ],
+  "features": "Calendrier, diagramme de Gantt, audit, organigramme, notifications",
+  "stack": ["Laravel", "Vue.js", "JavaScript", "Bootstrap", "MySQL"],
+  "media": {
+    "screenshots": [
+      {
+        "id": "modelisation",
+        "title": "Modélisation UML",
+        "description": "Les diagrammes qui structurent les cas d’utilisation, les échanges et les données de la plateforme.",
+        "images": [
+          {
+            "src": "/projects/pms-algerie-telecom/UseCase_Diagram.png",
+            "title": "Diagramme de cas d’utilisation",
+            "alt": "Diagramme UML présentant les acteurs et les fonctionnalités de gestion des utilisateurs"
+          },
+          {
+            "src": "/projects/pms-algerie-telecom/Sequence_Diagram_creation_project.png",
+            "title": "Création d’un projet",
+            "alt": "Diagramme de séquence illustrant la création et l’assignation d’un projet"
+          },
+          {
+            "src": "/projects/pms-algerie-telecom/Class_Diagram.png",
+            "title": "Diagramme de classes",
+            "alt": "Diagramme de classes UML des entités et relations de la plateforme de gestion de projets"
+          }
+        ]
+      },
+      {
+        "id": "project-planning",
+        "title": "Pilotage et planification",
+        "description": "Une vue d’ensemble du portefeuille, du calendrier et du suivi des tâches avec le diagramme de Gantt.",
+        "images": [
+          {
+            "src": "/projects/pms-algerie-telecom/Admin_Dashboard.png",
+            "title": "Tableau de bord administrateur",
+            "alt": "Tableau de bord administrateur avec indicateurs et actions rapides"
+          },
+          {
+            "src": "/projects/pms-algerie-telecom/Calendrier_Vue_par_Mois.png",
+            "title": "Calendrier des projets",
+            "alt": "Calendrier mensuel affichant les tâches et jalons des projets"
+          },
+          {
+            "src": "/projects/pms-algerie-telecom/Gantt1.png",
+            "title": "Planification Gantt",
+            "alt": "Diagramme de Gantt avec la chronologie des tâches et leurs dépendances"
+          },
+          {
+            "src": "/projects/pms-algerie-telecom/Gantt2.png",
+            "title": "Suivi de l'avancement",
+            "alt": "Vue détaillée du diagramme de Gantt et de la progression des tâches"
+          }
+        ]
+      },
+      {
+        "id": "administration",
+        "title": "Accès, utilisateurs et organisation",
+        "description": "Les modules d’administration qui structurent les accès, les équipes et l’organisation d’Algérie Télécom.",
+        "images": [
+          {
+            "src": "/projects/pms-algerie-telecom/Welcome.png",
+            "title": "Accueil et connexion",
+            "alt": "Écran d'accueil de la plateforme de gestion de projets d'Algérie Télécom"
+          },
+          {
+            "src": "/projects/pms-algerie-telecom/Gestion_Utilisateurs.png",
+            "title": "Gestion des utilisateurs",
+            "alt": "Interface d'administration des utilisateurs, rôles et structures"
+          },
+          {
+            "src": "/projects/pms-algerie-telecom/Gestion_Structures.png",
+            "title": "Gestion des structures",
+            "alt": "Liste des unités organisationnelles et gestion de leurs niveaux"
+          },
+          {
+            "src": "/projects/pms-algerie-telecom/Organigramme.png",
+            "title": "Organigramme",
+            "alt": "Organigramme interactif des structures d'Algérie Télécom"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "/projects/pms-algerie-telecom/Admin_and_all_aplication.mp4",
+        "poster": "/projects/pms-algerie-telecom/admin-poster.jpg",
+        "title": "Découvrir la plateforme",
+        "hook": "42 écrans. Une vue pour tout piloter.",
+        "description": "Un aperçu complet des outils de pilotage et des modules d'administration.",
+        "duration": "02:42"
+      },
+      {
+        "src": "/projects/pms-algerie-telecom/Departement_Final.mp4",
+        "poster": "/projects/pms-algerie-telecom/department-poster.jpg",
+        "title": "Espace département",
+        "hook": "Du suivi des équipes à la progression des projets.",
+        "description": "Graphiques de charge, avancement des projets et vues dédiées au département.",
+        "duration": "01:35"
+      },
+      {
+        "src": "/projects/pms-algerie-telecom/Member_Dashboard_Final.mp4",
+        "poster": "/projects/pms-algerie-telecom/member-poster.jpg",
+        "title": "Espace membre de l’équipe",
+        "hook": "Chaque membre sait quoi faire et où en est son travail.",
+        "description": "Le suivi des projets, des tâches et des dernières activités depuis l'espace membre.",
+        "duration": "00:43"
+      }
+    ],
+    "closingGallery": {
+      "id": "behind-the-scenes",
+      "title": "Dans les coulisses",
+      "description": "Quelques moments de conception, de développement et de collaboration autour du projet.",
+      "images": [
+        {
+          "src": "/projects/pms-algerie-telecom/Partie_du_Code.png",
+          "title": "Extrait du code",
+          "alt": "Extrait de code source de la plateforme de gestion de projets"
+        },
+        {
+          "src": "/projects/pms-algerie-telecom/Note-2026-10.jpg",
+          "title": "Notes de conception",
+          "alt": "Notes manuscrites prises pendant la conception du projet"
+        },
+        {
+          "src": "/projects/pms-algerie-telecom/Direction_Generale.jpeg",
+          "title": "Direction générale d’Algérie Télécom",
+          "alt": "Bâtiment de la direction générale d’Algérie Télécom"
+        }
+      ]
+    }
+  },
+  "caseStudy": {
+    "context": "La Division des Systèmes d'Information d'Algérie Télécom pilotait ses projets sans outil centralisé : suivi fragmenté, informations dispersées, aucune visibilité transverse. Le besoin : une plateforme interne unique de gestion de projets, conçue avec les encadrants de la DSI.",
+    "role": "Développeur Full Stack — analyse des besoins, conception, développement back-end (Laravel) et front-end (Vue.js), validation fonctionnelle avec la DSI.",
+    "constraints": [
+      "Environnement corporate : validation de chaque livrable par les encadrants de la DSI",
+      "Base de données métier dense : 26 tables interconnectées (projets, tâches, utilisateurs, audits)",
+      "Contrôle d'accès strict par rôles (RBAC) sur 42 écrans fonctionnels",
+      "Calendrier, diagramme de Gantt et notifications à intégrer dans une UX cohérente"
+    ],
+    "approach": [
+      "Ateliers d'analyse des besoins avec la DSI → modélisation UML puis schéma de base de données en 26 tables",
+      "Architecture MVC Laravel : API métier claire, séparation stricte des responsabilités",
+      "Front-end Vue.js par composants réutilisables, états gérés par module",
+      "RBAC implémenté dès la couche autorisation, testé écran par écran"
+    ],
+    "outcome": "Une plateforme de 42 écrans fonctionnels adoptée par la Division des Systèmes d'Information : suivi de projets, planning (calendrier + Gantt), audit complet et notifications — livrée et validée dans le cadre du projet de fin d'études."
+  }
+}

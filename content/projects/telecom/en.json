@@ -1,0 +1,161 @@
+{
+  "index": "01",
+  "period": "2025 — Final year project",
+  "role": "Full Stack Developer — Algérie Télécom (DSI)",
+  "title": "Project management web platform",
+  "description": "Design and development of an internal platform for the Information Systems Division, working directly with DSI supervisors on requirements analysis and validation.",
+  "client": "Algérie Télécom",
+  "year": "2025",
+  "metrics": [
+    { "value": "42", "label": "functional screens" },
+    { "value": "26", "label": "database tables" },
+    { "value": "4 RBAC", "label": "role-based access control" }
+  ],
+  "features": "Calendar, Gantt chart, audit log, org chart, notifications",
+  "stack": ["Laravel", "Vue.js", "JavaScript", "Bootstrap", "MySQL"],
+  "media": {
+    "screenshots": [
+      {
+        "id": "modelisation",
+        "title": "UML modelling",
+        "description": "The diagrams behind the platform's use cases, interactions and data model.",
+        "images": [
+          {
+            "src": "/projects/pms-algerie-telecom/UseCase_Diagram.png",
+            "title": "Use case diagram",
+            "alt": "UML diagram showing the actors and user-management features"
+          },
+          {
+            "src": "/projects/pms-algerie-telecom/Sequence_Diagram_creation_project.png",
+            "title": "Project creation",
+            "alt": "Sequence diagram illustrating project creation and assignment"
+          },
+          {
+            "src": "/projects/pms-algerie-telecom/Class_Diagram.png",
+            "title": "Class diagram",
+            "alt": "UML class diagram of the project management platform entities and relationships"
+          }
+        ]
+      },
+      {
+        "id": "project-planning",
+        "title": "Project planning and tracking",
+        "description": "A portfolio overview, project calendar and task tracking through the Gantt chart.",
+        "images": [
+          {
+            "src": "/projects/pms-algerie-telecom/Admin_Dashboard.png",
+            "title": "Admin dashboard",
+            "alt": "Administrator dashboard with key metrics and quick actions"
+          },
+          {
+            "src": "/projects/pms-algerie-telecom/Calendrier_Vue_par_Mois.png",
+            "title": "Project calendar",
+            "alt": "Monthly calendar showing project tasks and milestones"
+          },
+          {
+            "src": "/projects/pms-algerie-telecom/Gantt1.png",
+            "title": "Gantt planning",
+            "alt": "Gantt chart showing task timelines and dependencies"
+          },
+          {
+            "src": "/projects/pms-algerie-telecom/Gantt2.png",
+            "title": "Progress tracking",
+            "alt": "Detailed Gantt chart view showing task progress"
+          }
+        ]
+      },
+      {
+        "id": "administration",
+        "title": "Access, users and organization",
+        "description": "The administration modules that organize access, teams and Algérie Télécom's structure.",
+        "images": [
+          {
+            "src": "/projects/pms-algerie-telecom/Welcome.png",
+            "title": "Welcome and sign-in",
+            "alt": "Welcome screen of the Algérie Télécom project management platform"
+          },
+          {
+            "src": "/projects/pms-algerie-telecom/Gestion_Utilisateurs.png",
+            "title": "User management",
+            "alt": "Administration interface for users, roles and organizational structures"
+          },
+          {
+            "src": "/projects/pms-algerie-telecom/Gestion_Structures.png",
+            "title": "Structure management",
+            "alt": "List of organizational units and their hierarchy levels"
+          },
+          {
+            "src": "/projects/pms-algerie-telecom/Organigramme.png",
+            "title": "Organization chart",
+            "alt": "Interactive organization chart of Algérie Télécom structures"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "/projects/pms-algerie-telecom/Admin_and_all_aplication.mp4",
+        "poster": "/projects/pms-algerie-telecom/admin-poster.jpg",
+        "title": "Discover the platform",
+        "hook": "42 screens. One place to stay in control.",
+        "description": "A complete look at the project oversight tools and administration modules.",
+        "duration": "02:42"
+      },
+      {
+        "src": "/projects/pms-algerie-telecom/Departement_Final.mp4",
+        "poster": "/projects/pms-algerie-telecom/department-poster.jpg",
+        "title": "Department workspace",
+        "hook": "From team workloads to project progress.",
+        "description": "Workload charts, project progress and department-specific views.",
+        "duration": "01:35"
+      },
+      {
+        "src": "/projects/pms-algerie-telecom/Member_Dashboard_Final.mp4",
+        "poster": "/projects/pms-algerie-telecom/member-poster.jpg",
+        "title": "Team member workspace",
+        "hook": "Every member knows what to do and where work stands.",
+        "description": "Project, task and recent activity tracking from the member workspace.",
+        "duration": "00:43"
+      }
+    ],
+    "closingGallery": {
+      "id": "behind-the-scenes",
+      "title": "Behind the scenes",
+      "description": "A few moments from the design, development and collaboration behind the project.",
+      "images": [
+        {
+          "src": "/projects/pms-algerie-telecom/Partie_du_Code.png",
+          "title": "Code excerpt",
+          "alt": "Source code excerpt from the project management platform"
+        },
+        {
+          "src": "/projects/pms-algerie-telecom/Note-2026-10.jpg",
+          "title": "Design notes",
+          "alt": "Handwritten notes from the project design process"
+        },
+        {
+          "src": "/projects/pms-algerie-telecom/Direction_Generale.jpeg",
+          "title": "Algérie Télécom headquarters",
+          "alt": "Algérie Télécom headquarters building"
+        }
+      ]
+    }
+  },
+  "caseStudy": {
+    "context": "Algérie Télécom's Information Systems Division ran projects with no centralized tool: fragmented tracking, scattered information, no cross-project visibility. The need: a single internal project management platform, designed with DSI supervisors.",
+    "role": "Full Stack developer — requirements analysis, design, back-end (Laravel) and front-end (Vue.js) development, functional validation with the DSI.",
+    "constraints": [
+      "Corporate environment: every deliverable validated by DSI supervisors",
+      "Dense business database: 26 interconnected tables (projects, tasks, users, audits)",
+      "Strict role-based access control (RBAC) across 42 functional screens",
+      "Calendar, Gantt chart and notifications within one coherent UX"
+    ],
+    "approach": [
+      "Requirements workshops with the DSI → UML modeling, then a 26-table database schema",
+      "Laravel MVC architecture: clean business API, strict separation of concerns",
+      "Component-based Vue.js front end, state managed per module",
+      "RBAC implemented at the authorization layer, tested screen by screen"
+    ],
+    "outcome": "A 42-screen platform adopted by the Information Systems Division: project tracking, planning (calendar + Gantt), full audit log and notifications — delivered and validated as the final year project."
+  }
+}

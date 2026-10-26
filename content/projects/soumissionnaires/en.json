@@ -1,0 +1,154 @@
+{
+  "index": "02",
+  "period": "2024 — Freelance · SPA AADL Gest-Immo",
+  "role": "Python Developer",
+  "title": "Automated bid evaluation application",
+  "description": "Desktop application automating bid evaluation workflows — advanced filtering and automated Excel data processing.",
+  "client": "SPA AADL Gest-Immo",
+  "year": "2024",
+  "metrics": [
+    { "value": "50+", "label": "tender files processed" },
+    { "value": "-70%", "label": "evaluation time saved" },
+    { "value": "3", "label": "automated phases (admin, technical, financial)" }
+  ],
+  "features": "Excel & Word exports, advanced filters, report generation",
+  "stack": ["Python", "PyQt5", "SQLite", "Pandas", "OpenPyXL"],
+  "media": {
+    "screenshots": [
+      {
+        "id": "workflow-screens",
+        "title": "Application screens",
+        "description": "Key screens, from registering a tender file to ranking the bids.",
+        "images": [
+          {
+            "src": "/projects/soumissionnaires/Vue_densemble.png",
+            "title": "Overview",
+            "alt": "Workflow dashboard showing the progress of files, bids, and evaluations"
+          },
+          {
+            "src": "/projects/soumissionnaires/Dossier.png",
+            "title": "Tender file",
+            "alt": "Form for registering a bidder and the relevant lots"
+          },
+          {
+            "src": "/projects/soumissionnaires/Offres.png",
+            "title": "Bids and lots",
+            "alt": "Management of registered bids, lots, and available actions"
+          },
+          {
+            "src": "/projects/soumissionnaires/Technique.png",
+            "title": "Technical evaluation",
+            "alt": "Summary of technical scores and bidder status"
+          },
+          {
+            "src": "/projects/soumissionnaires/Finance.png",
+            "title": "Financial evaluation",
+            "alt": "Financial evaluation steps with Qualified, BOQ, Amounts, and Ranking tabs"
+          },
+          {
+            "src": "/projects/soumissionnaires/Finance_DQE.png",
+            "title": "DQE verification",
+            "alt": "Entry and verification of unit prices in the bill of quantities"
+          },
+          {
+            "src": "/projects/soumissionnaires/Finance_Montants.png",
+            "title": "Bid amounts",
+            "alt": "Financial bid amounts listed by lot"
+          },
+          {
+            "src": "/projects/soumissionnaires/Finance_Classement.png",
+            "title": "Final ranking",
+            "alt": "Financial bid ranking table by lot"
+          },
+          {
+            "src": "/projects/soumissionnaires/Repertoire.png",
+            "title": "Bidder directory",
+            "alt": "Searchable directory of bidders, file numbers, and lots"
+          },
+          {
+            "src": "/projects/soumissionnaires/Historique.png",
+            "title": "Activity history",
+            "alt": "Log of recorded submissions, evaluations, entries, and approvals"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "/projects/soumissionnaires/portfolio-workflow.mp4",
+        "poster": "/projects/soumissionnaires/Vue_densemble.png",
+        "title": "Complete workflow walkthrough",
+        "hook": "From tender file to final ranking, the workflow in action.",
+        "description": "Follow the bids from technical review through to the final decision.",
+        "duration": "01:31"
+      }
+    ],
+    "exportGallery": {
+      "id": "export-results",
+      "title": "Exported results",
+      "description": "Previews of the generated documents, ready to share and validate.",
+      "centered": true,
+      "images": [
+        {
+          "src": "/projects/soumissionnaires/Resultat_Excel.png",
+          "title": "Excel format",
+          "alt": "Exported Excel sheet showing technical scores and bidder status for lot 1"
+        },
+        {
+          "src": "/projects/soumissionnaires/Resultat_word.png",
+          "title": "Word format",
+          "alt": "Exported Word document showing the final technical evaluation table for lot 1"
+        }
+      ]
+    },
+    "closingGallery": {
+      "id": "behind-the-scenes",
+      "title": "Behind the scenes",
+      "description": "The paper criteria and design notes that shaped the evaluation automation.",
+      "images": [
+        {
+          "src": "/projects/soumissionnaires/Critere_Evaluation_page10.jpg",
+          "title": "Evaluation criteria — page 10",
+          "alt": "Page 10 of the paper bid evaluation criteria used as the business reference"
+        },
+        {
+          "src": "/projects/soumissionnaires/Critere_Evaluation_page11.jpg",
+          "title": "Evaluation criteria — page 11",
+          "alt": "Page 11 of the paper bid evaluation criteria, including ranking rules"
+        },
+        {
+          "src": "/projects/soumissionnaires/Note_Fentre_Offre_Financiere.jpg",
+          "title": "Notes — financial bid window",
+          "alt": "Handwritten design notes for the financial bid processing window"
+        },
+        {
+          "src": "/projects/soumissionnaires/note_Saisie.jpg",
+          "title": "Notes — data entry",
+          "alt": "Handwritten notes on entering and calculating bid information"
+        },
+        {
+          "src": "/projects/soumissionnaires/note_affichage.jpg",
+          "title": "Notes — results display",
+          "alt": "Handwritten notes on displaying bids and their results"
+        }
+      ]
+    }
+  },
+  "caseStudy": {
+    "context": "SPA AADL Gest-Immo manually evaluated bids for waterproofing tenders: Excel processed file by file, repetitive administrative, technical and financial phases — error-prone and slow.",
+    "role": "Freelance Python developer: complete design and development of the desktop application, from data automation to report generation.",
+    "constraints": [
+      "50+ tender files to process reliably",
+      "3 evaluation phases to automate: administrative, technical, financial",
+      "Heterogeneous Excel data to normalize (Pandas / OpenPyXL)",
+      "App usable by non-technical staff → simple desktop UI (PyQt5)"
+    ],
+    "approach": [
+      "Mapped the existing evaluation process with the client",
+      "Python processing engine: Excel ingestion, advanced filtering, per-phase scoring",
+      "Clean PyQt5 interface: file import, processing status, exports",
+      "Automated exports in 2 formats: Excel and PDF, ready for validation"
+    ],
+    "outcome": "50+ files processed with over 70% evaluation time saved. All 3 phases (administrative, technical, financial) are now fully automated, with Excel and Word exports."
+  }
+}

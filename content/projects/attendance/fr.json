@@ -1,0 +1,34 @@
+{
+  "index": "03",
+  "period": "2026 — Projet personnel",
+  "role": "Full Stack — conception et développement",
+  "title": "Système de gestion des présences",
+  "description": "Application Full Stack de gestion des présences avec API REST et authentification JWT, en cours de développement.",
+  "client": "Projet personnel",
+  "year": "2026",
+  "inProgress": true,
+  "metrics": [
+    { "value": "JWT", "label": "authentification sécurisée" },
+    { "value": "REST", "label": "API FastAPI documentée" },
+    { "value": "5", "label": "modules : étudiants, groupes, enseignants, présences, emplois du temps" }
+  ],
+  "features": "Gestion des étudiants, groupes, enseignants et présences",
+  "stack": ["FastAPI", "React 19", "TypeScript", "MySQL"],
+  "caseStudy": {
+    "context": "Projet personnel : concevoir de A à Z une application Full Stack moderne de gestion des présences — du schéma de base à l'interface — pour consolider ma pratique FastAPI / React et livrer un outil réutilisable.",
+    "role": "Conception et développement Full Stack : API REST FastAPI, authentification JWT, interface React 19 + TypeScript, base MySQL.",
+    "constraints": [
+      "Architecture Full Stack réelle : API REST documentée, auth JWT sécurisée",
+      "Stack moderne à maîtriser en profondeur : FastAPI, React 19, TypeScript",
+      "5 modules métier : étudiants, groupes, enseignants, présences, emplois du temps",
+      "Projet mené en parallèle des études → gestion du temps et périmètre maîtrisés"
+    ],
+    "approach": [
+      "Modélisation MySQL des 5 modules puis API REST FastAPI avec documentation automatique",
+      "Authentification JWT avec gestion des rôles côté API",
+      "Interface React 19 + TypeScript typée strictement, composants par module métier",
+      "Développement itératif : un module livré et testé à la fois"
+    ],
+    "outcome": "Application en cours de finalisation : API REST documentée avec JWT, interface typée React 19, 5 modules fonctionnels. Projet de référence de ma pratique Full Stack moderne."
+  }
+}

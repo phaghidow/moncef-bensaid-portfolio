@@ -1,0 +1,206 @@
+{
+  "meta": {
+    "title": "Moncef Bensaid — Full Stack Developer",
+    "description": "Full Stack developer based in Algiers: web and desktop applications that solve real business problems. Laravel, Vue.js, React, FastAPI, Python, MySQL."
+  },
+  "nav": {
+    "projects": "Projects",
+    "experience": "Experience",
+    "about": "About",
+    "contact": "Contact",
+    "cv": "Resume",
+    "navigation": "Main navigation",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "themeLight": "Switch to light theme",
+    "themeDark": "Switch to dark theme",
+    "langSwitch": "Passer en français"
+  },
+  "hero": {
+    "kicker": "Software engineering · Systems security",
+    "name": "Moncef Bensaid",
+    "lead": "Full Stack developer — I build web and desktop applications that solve real business problems, from requirements analysis to production.",
+    "leadRich": "Full Stack developer — I build web and desktop applications that solve real <em>business</em> problems, from requirements analysis to production.",
+    "primaryCta": "View my projects",
+    "secondaryCta": "Download resume",
+    "scroll": "Scroll"
+  },
+  "stack": {
+    "label": "02 / STACK",
+    "title": "Technologies",
+    "titleAccent": "I build with.",
+    "intro": "The tools I use on my projects, from back-end to interface.",
+    "core": "Core stack",
+    "count": "{count} technologies",
+    "groups": {
+      "backend": "Back-end",
+      "frontend": "Front-end",
+      "desktop": "Desktop",
+      "language": "Language",
+      "markup": "Markup",
+      "styling": "Styling",
+      "database": "Database",
+      "versioning": "Version control",
+      "design": "Design"
+    },
+    "items": {
+      "laravel": "Laravel",
+      "vue": "Vue.js",
+      "react": "React",
+      "fastapi": "FastAPI",
+      "pyqt": "PyQt5",
+      "bootstrap": "Bootstrap",
+      "python": "Python",
+      "php": "PHP",
+      "javascript": "JavaScript",
+      "typescript": "TypeScript",
+      "html": "HTML5",
+      "css": "CSS3",
+      "mysql": "MySQL",
+      "sqlite": "SQLite",
+      "tailwind": "Tailwind CSS",
+      "git": "Git",
+      "github": "GitHub",
+      "figma": "Figma"
+    }
+  },
+  "projects": {
+    "label": "03 / Projects",
+    "title": "Selected works",
+    "wip": "in progress",
+    "indexHint": "Click a work to read the case study"
+  },
+  "experience": {
+    "label": "04 / EXPERIENCE",
+    "title": "Professional",
+    "titleAccent": "experience.",
+    "items": {
+      "telecom": {
+        "role": "Full Stack Developer — Intern",
+        "company": "Algérie Télécom (DSI)",
+        "period": "April — July 2025",
+        "location": "El Mohammadia, Algiers",
+        "description": "Designed and developed a project management web platform (Laravel / Vue.js) for the Information Systems Division, from requirements analysis through functional validation."
+      },
+      "freelance": {
+        "role": "Python Developer — Freelance",
+        "company": "SPA AADL Gest-Immo",
+        "period": "July — November 2024",
+        "location": "Les Bananiers, Algiers",
+        "description": "Developed a desktop application that automated the evaluation of 50+ tender files, reducing evaluation time by over 70%."
+      },
+      "teacher": {
+        "role": "Teacher — Private school",
+        "company": "Middle and secondary school levels",
+        "period": "March — June 2025",
+        "location": "Birtouta, Algiers",
+        "description": "Taught mathematics and physics while adapting learning materials and providing individualized student support."
+      }
+    }
+  },
+  "education": {
+    "label": "05 / Education",
+    "title": "Education",
+    "items": {
+      "master": {
+        "degree": "Master's — Networks and Embedded Systems",
+        "school": "University of Algiers 1",
+        "period": "Present"
+      },
+      "licence": {
+        "degree": "Bachelor's — Information Systems and Software Engineering",
+        "school": "University of Algiers 1",
+        "period": "2026"
+      },
+      "bac": {
+        "degree": "Baccalaureate — Experimental Sciences",
+        "school": "Ahmed Serir High School",
+        "period": "2022"
+      },
+      "code213": {
+        "degree": "Certificate — Coding with Python",
+        "school": "Code 213 School",
+        "period": "July — October 2024",
+        "note": "OOP · Web development · Data Science"
+      }
+    }
+  },
+  "about": {
+    "label": "05 / ABOUT",
+    "title": "About me.",
+    "titleRich": "About <em>me</em>.",
+    "headline": "I build applications that turn concrete needs into useful solutions.",
+    "quote": "I build software, and I’m specializing where it has to hold up: <mark>networks, IoT, cybersecurity</mark>.",
+    "seal": "NETWORKS • IOT • CYBERSECURITY • DEVELOPMENT •\u00a0",
+    "bio": "I’m a Full Stack developer who has designed and shipped web and desktop applications for real organizations, from requirements analysis to production. Now in a Master’s in Networks and Embedded Systems, I’m steering my practice toward networks, IoT and cybersecurity: I learn fast, and I want to understand what runs, and protects, the code I write.",
+    "factsEducationLabel": "Education",
+    "factsEducation": "Master’s in Networks and Embedded Systems — University of Algiers 1",
+    "factsFoundationLabel": "Foundation",
+    "factsFoundation": "Full Stack development — Laravel, Vue.js, React, FastAPI, Python",
+    "factsFocusLabel": "Specializing in",
+    "factsFocus": "Networks, IoT and embedded systems, cybersecurity",
+    "role": "Full Stack Developer",
+    "roleLabel": "Role",
+    "availabilityLabel": "Availability",
+    "availability": "Internship / freelance",
+    "focusLabel": "Focus",
+    "focus": "Architecture · REST API · UI/UX",
+    "qualitiesLabel": "Strengths",
+    "qualities": [
+      "Fast learner",
+      "Analytical thinking",
+      "Self-directed learning",
+      "Technology watch",
+      "Teamwork",
+      "Time management"
+    ],
+    "locationLabel": "Location",
+    "location": "Algiers, Algeria"
+  },
+  "contact": {
+    "label": "06 / CONTACT",
+    "eyebrow": "Let's talk",
+    "title": "An idea? A project? Let's talk.",
+    "titleRich": "An idea? A project? <em>Let’s talk</em>.",
+    "lead": "An idea to build, a project to develop, or an opportunity to discuss? Let's talk.",
+    "emailLabel": "Email",
+    "emailCTA": "Get in touch",
+    "githubLabel": "GitHub",
+    "linkedinLabel": "LinkedIn",
+    "locationLabel": "Location",
+    "location": "Algiers, Algeria",
+    "availabilityLabel": "Availability",
+    "availability": "Available for new opportunities"
+    },
+  "footer": {
+    "rights": "© 2026 Moncef Bensaid — All rights reserved",
+    "builtWith": "Designed and built with Next.js & Tailwind CSS",
+    "terminalHint": "Tip: type \"dev\" anywhere"
+  },
+  "easterEgg": {
+    "lines": [
+      "$ whoami",
+      "> full_stack_developer",
+      "$ stack --list",
+      "> laravel vue react fastapi python mysql",
+      "$ ./hire moncef",
+      "> status: available ✔"
+    ],
+    "close": "Fermer"
+  },
+  "caseStudy": {
+    "back": "Back to works",
+    "clientLabel": "Client",
+    "periodLabel": "Period",
+    "roleBoxLabel": "My role",
+    "blocks": {
+      "context": "01 — The context",
+      "constraints": "02 — The constraints",
+      "approach": "03 — The approach",
+      "outcome": "04 — The outcome"
+    },
+    "galleryLabel": "Screenshots",
+    "prev": "Previous work",
+    "next": "Next work"
+  }
+}

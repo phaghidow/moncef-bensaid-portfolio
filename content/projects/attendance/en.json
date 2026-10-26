@@ -1,0 +1,34 @@
+{
+  "index": "03",
+  "period": "2026 — Personal project",
+  "role": "Full Stack — design and development",
+  "title": "Attendance management system",
+  "description": "Full Stack attendance management application with REST API and JWT authentication, currently in development.",
+  "client": "Personal project",
+  "year": "2026",
+  "inProgress": true,
+  "metrics": [
+    { "value": "JWT", "label": "secure authentication" },
+    { "value": "REST", "label": "documented FastAPI" },
+    { "value": "5", "label": "modules: students, groups, teachers, attendance, schedules" }
+  ],
+  "features": "Students, groups, teachers and attendance management",
+  "stack": ["FastAPI", "React 19", "TypeScript", "MySQL"],
+  "caseStudy": {
+    "context": "Personal project: design an end-to-end modern full stack attendance application — from database schema to interface — to deepen my FastAPI / React practice and ship a reusable tool.",
+    "role": "Full Stack design and development: FastAPI REST API, JWT authentication, React 19 + TypeScript interface, MySQL database.",
+    "constraints": [
+      "Real full stack architecture: documented REST API, secure JWT auth",
+      "Modern stack to master in depth: FastAPI, React 19, TypeScript",
+      "5 business modules: students, groups, teachers, attendance, schedules",
+      "Built alongside studies → time management and controlled scope"
+    ],
+    "approach": [
+      "MySQL modeling of the 5 modules, then a FastAPI REST API with auto-generated docs",
+      "JWT authentication with role management on the API side",
+      "Strictly typed React 19 + TypeScript interface, components per business module",
+      "Iterative delivery: one module shipped and tested at a time"
+    ],
+    "outcome": "Application being finalized: documented REST API with JWT, typed React 19 interface, 5 functional modules. My reference project for modern full stack practice."
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "index": "02",
+  "period": "2024 — Freelance · SPA AADL Gest-Immo",
+  "role": "Développeur Python",
+  "title": "Application d'évaluation automatisée des offres",
+  "description": "Application desktop d'automatisation du traitement des travaux d'évaluation des offres d'appel — filtrage avancé et traitement automatisé des données Excel.",
+  "client": "SPA AADL Gest-Immo",
+  "year": "2024",
+  "metrics": [
+    { "value": "50+", "label": "dossiers d'appels d'offres traités" },
+    { "value": "-70%", "label": "de temps de traitement" },
+    { "value": "3", "label": "phases automatisées (adm., technique, financière)" }
+  ],
+  "features": "Exports Excel & Word, filtres avancés, génération de résultats",
+  "stack": ["Python", "PyQt5", "SQLite", "Pandas", "OpenPyXL"],
+  "media": {
+    "screenshots": [
+      {
+        "id": "workflow-screens",
+        "title": "Captures de l’application",
+        "description": "Les écrans clés, de l’enregistrement d’un dossier au classement des offres.",
+        "images": [
+          {
+            "src": "/projects/soumissionnaires/Vue_densemble.png",
+            "title": "Vue d’ensemble",
+            "alt": "Tableau de bord du workflow avec l’avancement des dossiers, offres et évaluations"
+          },
+          {
+            "src": "/projects/soumissionnaires/Dossier.png",
+            "title": "Dossier de soumission",
+            "alt": "Formulaire d’enregistrement d’un soumissionnaire et des lots concernés"
+          },
+          {
+            "src": "/projects/soumissionnaires/Offres.png",
+            "title": "Offres et lots",
+            "alt": "Gestion des offres enregistrées, des lots et des actions disponibles"
+          },
+          {
+            "src": "/projects/soumissionnaires/Technique.png",
+            "title": "Évaluation technique",
+            "alt": "Écran de synthèse des notes techniques et du statut des soumissionnaires"
+          },
+          {
+            "src": "/projects/soumissionnaires/Finance.png",
+            "title": "Évaluation financière",
+            "alt": "Étapes de l’évaluation financière avec les onglets Qualifiés, DQE, Montants et Classement"
+          },
+          {
+            "src": "/projects/soumissionnaires/Finance_DQE.png",
+            "title": "Vérification du DQE",
+            "alt": "Saisie et vérification des prix unitaires du détail quantitatif estimatif"
+          },
+          {
+            "src": "/projects/soumissionnaires/Finance_Montants.png",
+            "title": "Montants des offres",
+            "alt": "Consultation des montants des offres financières par lot"
+          },
+          {
+            "src": "/projects/soumissionnaires/Finance_Classement.png",
+            "title": "Classement final",
+            "alt": "Tableau de classement des offres financières par lot"
+          },
+          {
+            "src": "/projects/soumissionnaires/Repertoire.png",
+            "title": "Répertoire des soumissionnaires",
+            "alt": "Répertoire consultable des soumissionnaires, numéros de plis et lots"
+          },
+          {
+            "src": "/projects/soumissionnaires/Historique.png",
+            "title": "Historique des actions",
+            "alt": "Journal des créations, évaluations, saisies et validations enregistrées"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "/projects/soumissionnaires/portfolio-workflow.mp4",
+        "poster": "/projects/soumissionnaires/Vue_densemble.png",
+        "title": "Parcours complet du workflow",
+        "hook": "Du dossier au classement final, le workflow en action.",
+        "description": "Visualisez le cheminement des offres, de l’analyse technique à la décision finale.",
+        "duration": "01:31"
+      }
+    ],
+    "exportGallery": {
+      "id": "export-results",
+      "title": "Résultats des exports",
+      "description": "Aperçus des documents générés pour partager et valider les résultats.",
+      "centered": true,
+      "images": [
+        {
+          "src": "/projects/soumissionnaires/Resultat_Excel.png",
+          "title": "Format Excel",
+          "alt": "Feuille Excel exportée présentant les notes techniques et le statut des soumissionnaires du lot 1"
+        },
+        {
+          "src": "/projects/soumissionnaires/Resultat_word.png",
+          "title": "Format Word",
+          "alt": "Document Word exporté présentant le tableau final d’évaluation technique du lot 1"
+        }
+      ]
+    },
+    "closingGallery": {
+      "id": "behind-the-scenes",
+      "title": "Dans les coulisses",
+      "description": "Les critères papier et les notes de conception qui ont guidé l’automatisation de l’évaluation.",
+      "images": [
+        {
+          "src": "/projects/soumissionnaires/Critere_Evaluation_page10.jpg",
+          "title": "Critères d’évaluation — page 10",
+          "alt": "Page 10 des critères papier d’évaluation des offres, utilisée comme référence métier"
+        },
+        {
+          "src": "/projects/soumissionnaires/Critere_Evaluation_page11.jpg",
+          "title": "Critères d’évaluation — page 11",
+          "alt": "Page 11 des critères papier d’évaluation des offres, incluant les règles de classement"
+        },
+        {
+          "src": "/projects/soumissionnaires/Note_Fentre_Offre_Financiere.jpg",
+          "title": "Notes — fenêtre de l’offre financière",
+          "alt": "Notes manuscrites de conception de la fenêtre de traitement d’une offre financière"
+        },
+        {
+          "src": "/projects/soumissionnaires/note_Saisie.jpg",
+          "title": "Notes — saisie",
+          "alt": "Notes manuscrites sur la saisie et le calcul des informations des offres"
+        },
+        {
+          "src": "/projects/soumissionnaires/note_affichage.jpg",
+          "title": "Notes — affichage",
+          "alt": "Notes manuscrites sur l’affichage des offres et de leurs résultats"
+        }
+      ]
+    }
+  },
+  "caseStudy": {
+    "context": "SPA AADL Gest-Immo évaluait manuellement les offres d'appels d'offres de travaux d'étanchéité : traitement Excel dossier par dossier, phases administratives, techniques et financières répétitives — source d'erreurs et de lenteur.",
+    "role": "Développeur Python freelance : conception et développement complet de l'application desktop, de l'automatisation des données à la génération des résultats.",
+    "constraints": [
+      "Plus de 50 dossiers d'appels d'offres à traiter avec fiabilité",
+      "3 phases d'évaluation à automatiser : administrative, technique, financière",
+      "Données Excel hétérogènes à normaliser (Pandas / OpenPyXL)",
+      "Application utilisable par des non-techniciens → interface desktop simple (PyQt5)"
+    ],
+    "approach": [
+      "Cartographie du processus d'évaluation existant avec le client",
+      "Moteur de traitement Python : ingestion Excel, filtrage avancé, scoring par phase",
+      "Interface PyQt5 épurée : import des dossiers, suivi du traitement, exports",
+      "Exports automatisés en 2 formats : Excel et Word, prêts pour validation"
+    ],
+    "outcome": "Plus de 50 dossiers traités avec une réduction de plus de 70 % du temps d'évaluation. Les 3 phases (administrative, technique, financière) sont désormais entièrement automatisées, avec exports Excel et Word."
+  }
+}
