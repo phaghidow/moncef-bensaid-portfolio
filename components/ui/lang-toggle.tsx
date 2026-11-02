@@ -1,16 +1,20 @@
 "use client";
 
 import { useLocale, useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 import { usePathname } from "@/i18n/routing";
 
 export function LangToggle() {
   const locale = useLocale();
   const pathname = usePathname();
+  const params = useParams();
   const t = useTranslations("nav");
   const nextLocale = locale === "fr" ? "en" : "fr";
-
-  const cleanPath = pathname.replace(/^\/(fr|en)(?=\/|$)/, "") || "/";
-  const nextPath = `/${nextLocale}${cleanPath === "/" ? "" : cleanPath}`;
+  const projectSlug = params.slug;
+  const nextPath =
+    pathname === "/projects/[slug]" && typeof projectSlug === "string"
+      ? `/${nextLocale}/${nextLocale === "fr" ? "projets" : "projects"}/${encodeURIComponent(projectSlug)}`
+      : `/${nextLocale}`;
 
   return (
     <a
