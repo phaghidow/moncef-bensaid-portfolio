@@ -11,6 +11,7 @@ export type ProjectGalleryGroup = {
   upcoming?: string[];
   centered?: boolean;
   mobileMockup?: boolean;
+  callToAction?: { href: string; label: string };
 };
 
 export type ProjectVideo = {
@@ -20,12 +21,21 @@ export type ProjectVideo = {
   hook: string;
   description: string;
   duration: string;
+  mobileMockup?: boolean;
 };
 
 export type Project = {
   index: string;
   period: string;
   role: string;
+  contextBadge?: string;
+  headerRole?: string;
+  collaborator?: string;
+  figmaUrl?: string;
+  briefDocument?: {
+    title: string;
+    pdfSrc: string;
+  };
   title: string;
   description: string;
   client: string;
@@ -89,6 +99,12 @@ export function getProjectPreview(slug: string, project: Project): string | unde
   }
   if (slug === "soumissionnaires") {
     return "/projects/soumissionnaires/Vue_densemble.png";
+  }
+  if (slug === "babil") {
+    return "/projects/babil/home-page-dark.png";
+  }
+  if (slug === "tictactoe") {
+    return "/projects/tictactoe/portfolio-mockup_3_forCursor.png";
   }
 
   return project.media?.screenshots[0]?.images[0]?.src;

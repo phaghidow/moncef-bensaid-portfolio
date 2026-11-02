@@ -29,6 +29,7 @@ export async function Projects() {
                   preview={getProjectPreview(slug, project)}
                   className="group block border-b border-border py-8 transition-colors duration-theme hover:bg-accent-soft"
                   previewClassName="w-[min(340px,calc(100vw-28px))]"
+                  previewImageUnoptimized={slug === "tictactoe"}
                 >
                   <div className="flex items-center justify-between gap-6">
                     <div className="flex min-w-0 items-center gap-4 md:gap-6">

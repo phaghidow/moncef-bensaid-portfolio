@@ -92,12 +92,13 @@
     ],
     "videos": [
       {
-        "src": "/projects/tictactoe/mobile-demo.mp4",
-        "poster": "/projects/tictactoe/portfolio-mockup.png",
+        "src": "/projects/tictactoe/tictactoe_demo-video.mp4",
+        "poster": "/projects/tictactoe/home.png",
         "title": "Une partie, du premier écran au résultat",
-        "hook": "Un écran d’accueil. Puis le premier coup.",
+        "hook": "Le premier coup. La partie est lancée.",
         "description": "Une courte démonstration de cette première expérience mobile avec Flutter.",
-        "duration": "00:18"
+        "duration": "00:08",
+        "mobileMockup": true
       }
     ],
     "videoHeading": "Le jeu en mouvement",

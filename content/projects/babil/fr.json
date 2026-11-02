@@ -1,0 +1,129 @@
+{
+  "index": "05",
+  "period": "2025–2026 — Master / TP IHM",
+  "role": "Conception de l’interface et développement Java Swing",
+  "contextBadge": "Master · TP IHM",
+  "headerRole": "UI/UX · Java Swing",
+  "collaborator": "Adel Meseur",
+  "figmaUrl": "https://www.figma.com/design/Au2wrKOgz7UGZhlo2F43zW/EXO--copie-?node-id=0-1&t=rHeVTl0jc8Kqcz00-0",
+  "briefDocument": {
+    "title": "Besoins & spécifications fonctionnelles",
+    "pdfSrc": "/projects/babil/project-brief.pdf"
+  },
+  "title": "Bäbil — bibliothèque en ligne",
+  "description": "Un projet universitaire d’IHM autour d’une bibliothèque en ligne : parcours de consultation, panier et paiement, maquettés dans Figma puis développés en Java Swing.",
+  "client": "Projet universitaire",
+  "year": "2026",
+  "metrics": [
+    { "value": "11", "label": "captures d’interface" },
+    { "value": "02", "label": "pages du cahier des charges" },
+    { "value": "01", "label": "prototype Figma" }
+  ],
+  "features": "Bibliothèque en ligne, panier, parcours de paiement",
+  "stack": ["Java Swing", "Figma", "IHM"],
+  "media": {
+    "screenshots": [
+      {
+        "id": "babil-design",
+        "title": "Modélisation & design",
+        "description": "Du concept visuel aux premières maquettes du parcours dans Figma.",
+        "callToAction": {
+          "href": "https://www.figma.com/design/Au2wrKOgz7UGZhlo2F43zW/EXO--copie-?node-id=0-1&t=rHeVTl0jc8Kqcz00-0",
+          "label": "Explorer le design complet sur Figma"
+        },
+        "images": [
+          {
+            "src": "/projects/babil/figma-design.png",
+            "title": "Design Figma",
+            "alt": "Design de l’interface Bäbil dans Figma"
+          },
+          {
+            "src": "/projects/babil/home-page-prototype.png",
+            "title": "Prototype de la page d’accueil",
+            "alt": "Prototype Figma de la page d’accueil de Bäbil"
+          },
+          {
+            "src": "/projects/babil/cart-prototype.png",
+            "title": "Prototype du panier",
+            "alt": "Prototype Figma du panier de Bäbil"
+          },
+          {
+            "src": "/projects/babil/book-page.png",
+            "title": "Page d’un livre",
+            "alt": "Page détaillée d’un livre dans le prototype Bäbil"
+          }
+        ]
+      },
+      {
+        "id": "babil-interface",
+        "title": "Parcours de la bibliothèque",
+        "description": "Les vues clés de Bäbil, de l’accueil à la consultation de la bibliothèque et au paiement.",
+        "images": [
+          {
+            "src": "/projects/babil/home-page-dark.png",
+            "title": "Accueil — thème sombre",
+            "alt": "Page d’accueil de Bäbil en thème sombre"
+          },
+          {
+            "src": "/projects/babil/home-page-light.png",
+            "title": "Accueil — thème clair",
+            "alt": "Page d’accueil de Bäbil en thème clair"
+          },
+          {
+            "src": "/projects/babil/my-library.png",
+            "title": "Ma bibliothèque",
+            "alt": "Vue de la bibliothèque personnelle dans Bäbil"
+          },
+          {
+            "src": "/projects/babil/book-details.png",
+            "title": "Détails d’un livre",
+            "alt": "Fiche détaillée d’un livre dans la bibliothèque Bäbil"
+          },
+          {
+            "src": "/projects/babil/my-bag.png",
+            "title": "Mon panier",
+            "alt": "Vue du panier de livres dans Bäbil"
+          },
+          {
+            "src": "/projects/babil/choose-payment-mode.png",
+            "title": "Choix du mode de paiement",
+            "alt": "Sélection du mode de paiement dans le parcours d’achat Bäbil"
+          },
+          {
+            "src": "/projects/babil/paiement-success.png",
+            "title": "Paiement confirmé",
+            "alt": "Confirmation de réussite du paiement dans Bäbil"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "/projects/babil/babil-demo.mp4",
+        "poster": "/projects/babil/home-page-dark.png",
+        "title": "Démonstration de Bäbil",
+        "hook": "De la bibliothèque au paiement confirmé.",
+        "description": "Une démonstration du parcours de l’application.",
+        "duration": ""
+      }
+    ],
+    "videoHeading": "Démonstration du workflow",
+    "videoIntro": "Le parcours de l’application, présenté dans une vidéo de démonstration."
+  },
+  "caseStudy": {
+    "context": "Bäbil est un projet universitaire de TP en Interaction Humain-Machine consacré à une application de bibliothèque en ligne. L’interface a été maquettée dans Figma et l’application réalisée avec Java Swing, en binôme avec Adel Meseur.",
+    "role": "Conception de l’interface et développement de l’application Java Swing dans le cadre du TP d’IHM.",
+    "constraints": [
+      "Concevoir un parcours lisible pour découvrir et consulter une bibliothèque en ligne",
+      "Présenter les étapes du panier et de confirmation du paiement",
+      "Faire correspondre le prototype Figma et l’interface de l’application"
+    ],
+    "approach": [
+      "Structurer les besoins et les spécifications fonctionnelles à partir du cahier des charges du TP",
+      "Maquetter les écrans et le parcours utilisateur dans Figma",
+      "Réaliser les vues de l’application desktop en Java Swing",
+      "Illustrer le parcours avec les vues de la bibliothèque, du panier et de confirmation"
+    ],
+    "outcome": "Un prototype Figma et une application Java Swing présentant les principaux écrans d’une expérience de bibliothèque en ligne."
+  }
+}

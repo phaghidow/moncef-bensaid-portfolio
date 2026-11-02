@@ -111,6 +111,10 @@ export default async function ProjectCaseStudyPage({
   const clientLabel = caseStudyT("clientLabel");
   const periodLabel = caseStudyT("periodLabel");
   const roleBoxLabel = caseStudyT("roleBoxLabel");
+  const contextParts =
+    project.collaborator && project.figmaUrl
+      ? project.caseStudy.context.split(project.collaborator)
+      : null;
 
   return (
     <div className="mx-auto max-w-container px-6 pb-20 pt-8 md:px-8 md:pb-24 md:pt-10">
@@ -134,6 +138,12 @@ export default async function ProjectCaseStudyPage({
             <div className="flex flex-wrap items-center gap-3">
               <span className="badge">{clientLabel}: {project.client}</span>
               <span className="badge">{periodLabel}: {project.year}</span>
+              {project.contextBadge && (
+                <span className="badge">{project.contextBadge}</span>
+              )}
+              {project.headerRole && (
+                <span className="badge">{project.headerRole}</span>
+              )}
               {project.stack.map((item) => (
                 <span key={`${slug}-${item}`} className="badge">
                   {item}
@@ -154,6 +164,7 @@ export default async function ProjectCaseStudyPage({
               </div>
             ))}
           </dl>
+
         </header>
 
         <section className="space-y-4 border-t border-border pt-10 md:pt-12">
@@ -162,7 +173,27 @@ export default async function ProjectCaseStudyPage({
           </p>
           <div className="space-y-6">
             <p className="case-body max-w-3xl text-text-secondary">
-              {project.caseStudy.context}
+              {contextParts &&
+              contextParts.length > 1 &&
+              project.collaborator &&
+              project.figmaUrl ? (
+                <>
+                  {contextParts[0]}
+                  <a
+                    href={project.figmaUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.collaborator} — ${locale === "fr" ? "ouvrir le prototype Figma" : "open the Figma prototype"}`}
+                    title={locale === "fr" ? "Ouvrir le prototype Figma" : "Open the Figma prototype"}
+                    className="whitespace-nowrap font-semibold text-accent transition-colors hover:text-text-primary"
+                  >
+                    <strong>{project.collaborator}</strong>
+                  </a>
+                  {contextParts.slice(1).join(project.collaborator)}
+                </>
+              ) : (
+                project.caseStudy.context
+              )}
             </p>
 
             <div className="surface p-5 md:p-6">
@@ -278,6 +309,38 @@ export default async function ProjectCaseStudyPage({
                       locale === "fr" ? "Lancer la démo" : "Play demo"
                     }
                   />
+                  {project.briefDocument && (
+                    <section
+                      aria-labelledby={`${slug}-brief-heading`}
+                      className="space-y-5 border-t border-border pt-8"
+                    >
+                      <div className="flex flex-wrap items-end justify-between gap-3 border-b border-border pb-4">
+                        <div className="space-y-1">
+                          <h3
+                            id={`${slug}-brief-heading`}
+                            className="font-display text-xl text-text-primary md:text-2xl"
+                          >
+                            {locale === "fr"
+                              ? "Dans les coulisses"
+                              : "Behind the scenes"}
+                          </h3>
+                          <p className="text-sm leading-relaxed text-text-muted">
+                            {project.briefDocument.title}
+                          </p>
+                        </div>
+                        <span className="rounded-full border border-border bg-surface px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-text-muted">
+                          02 {locale === "fr" ? "pages" : "pages"}
+                        </span>
+                      </div>
+                      <div className="surface overflow-hidden bg-white">
+                        <iframe
+                          src={`${project.briefDocument.pdfSrc}#page=1&zoom=page-width`}
+                          title={project.briefDocument.title}
+                          className="h-[75dvh] min-h-[28rem] w-full border-0 bg-white"
+                        />
+                      </div>
+                    </section>
+                  )}
                 </section>
               )}
 

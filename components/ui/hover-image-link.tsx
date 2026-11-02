@@ -18,6 +18,7 @@ type HoverImageLinkProps = {
   align?: "left" | "right";
   className?: string;
   previewClassName?: string;
+  previewImageUnoptimized?: boolean;
   children: ReactNode;
 };
 
@@ -29,6 +30,7 @@ export function HoverImageLink({
   align = "left",
   className,
   previewClassName,
+  previewImageUnoptimized = false,
   children,
 }: HoverImageLinkProps) {
   const previewRef = useRef<HTMLSpanElement>(null);
@@ -99,6 +101,7 @@ export function HoverImageLink({
               fill
               sizes={previewClassName ? "340px" : "320px"}
               className="object-cover"
+              unoptimized={previewImageUnoptimized}
             />
           )}
         </span>

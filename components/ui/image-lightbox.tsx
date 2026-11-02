@@ -1,8 +1,13 @@
 "use client";
 
-import { ArrowLeft, ArrowRight, ImagePlus, X } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ImagePlus,
+  X,
+} from "lucide-react";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { ProjectGalleryGroup } from "@/lib/projects";
 
 export type GalleryGroup = ProjectGalleryGroup;
@@ -34,19 +39,90 @@ export function ImageLightbox({
 }: ImageLightboxProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const pointerStart = useRef<{ x: number; y: number } | null>(null);
+  const [activeImageSize, setActiveImageSize] = useState<{
+    src: string;
+    width: number;
+    height: number;
+    displayWidth: number;
+    displayHeight: number;
+  } | null>(null);
   const [activeLocation, setActiveLocation] = useState<{
     groupIndex: number;
     imageIndex: number;
   } | null>(null);
-
   const activeGroup = activeLocation
     ? groups[activeLocation.groupIndex]
     : null;
   const activeImage = activeLocation
     ? activeGroup?.images[activeLocation.imageIndex]
     : null;
+  const activeImageSrc = activeImage?.src;
+  const activeImageIsMobileMockup = activeGroup?.mobileMockup === true;
+
+  useEffect(() => {
+    if (!activeImageSrc || activeImageIsMobileMockup) return;
+
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    const imageElement = dialog.querySelector<HTMLImageElement>(
+      "[data-full-resolution-image]",
+    );
+    if (!imageElement) return;
+
+    const image: HTMLImageElement = imageElement;
+    const imageSrc = activeImageSrc;
+
+    function updateImageSize() {
+      if (!image.naturalWidth || !image.naturalHeight) return;
+
+      const viewport = window.visualViewport;
+      const maxWidth = (viewport?.width ?? window.innerWidth) * 0.96;
+      const maxHeight = Math.min(
+        (viewport?.height ?? window.innerHeight) * 0.62,
+        52 * 16,
+      );
+      const scale = Math.min(
+        1,
+        maxWidth / image.naturalWidth,
+        maxHeight / image.naturalHeight,
+      );
+      const nextSize = {
+        src: imageSrc,
+        width: image.naturalWidth,
+        height: image.naturalHeight,
+        displayWidth: Math.round(image.naturalWidth * scale),
+        displayHeight: Math.round(image.naturalHeight * scale),
+      };
+
+      setActiveImageSize((current) => {
+        if (
+          current &&
+          current.src === nextSize.src &&
+          current.displayWidth === nextSize.displayWidth &&
+          current.displayHeight === nextSize.displayHeight
+        ) {
+          return current;
+        }
+
+        return nextSize;
+      });
+    }
+
+    image.addEventListener("load", updateImageSize);
+    window.addEventListener("resize", updateImageSize);
+    window.visualViewport?.addEventListener("resize", updateImageSize);
+    updateImageSize();
+
+    return () => {
+      image.removeEventListener("load", updateImageSize);
+      window.removeEventListener("resize", updateImageSize);
+      window.visualViewport?.removeEventListener("resize", updateImageSize);
+    };
+  }, [activeImageIsMobileMockup, activeImageSrc]);
 
   function openImage(groupIndex: number, imageIndex: number) {
+    setActiveImageSize(null);
     setActiveLocation({ groupIndex, imageIndex });
     dialogRef.current?.showModal();
   }
@@ -54,6 +130,7 @@ export function ImageLightbox({
   function closeImage() {
     dialogRef.current?.close();
     setActiveLocation(null);
+    setActiveImageSize(null);
     pointerStart.current = null;
   }
 
@@ -102,6 +179,20 @@ export function ImageLightbox({
                   <p className="max-w-2xl text-sm leading-relaxed text-text-muted">
                     {group.description}
                   </p>
+                  {group.callToAction && (
+                    <a
+                      href={group.callToAction.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-2 pt-1 text-sm font-medium text-accent transition-colors hover:text-text-primary"
+                    >
+                      {group.callToAction.label}
+                      <ArrowRight
+                        className="size-4 transition-transform group-hover:translate-x-0.5"
+                        aria-hidden="true"
+                      />
+                    </a>
+                  )}
                 </div>
                 <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-text-muted">
                   {String(itemCount).padStart(2, "0")}{" "}
@@ -163,44 +254,44 @@ export function ImageLightbox({
                       }
                     >
                       <button
-                        type="button"
-                        aria-haspopup="dialog"
-                        aria-label={`${openLabel}: ${image.title}`}
-                        onClick={() => openImage(groupIndex, imageIndex)}
-                        className={
-                          group.mobileMockup
-                            ? "relative mx-auto block aspect-[9/19.5] w-full overflow-hidden rounded-[2.5rem] border-4 border-neutral-800 bg-neutral-800 p-1 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.55)] transition-transform duration-theme hover:-translate-y-1"
-                            : "relative block aspect-video w-full overflow-hidden bg-code-bg"
-                        }
-                      >
-                        {group.mobileMockup ? (
-                          <>
-                            <span className="absolute inset-[5px] overflow-hidden rounded-[2rem] bg-white">
-                              <Image
-                                src={image.src}
-                                alt={image.alt}
-                                fill
-                                sizes="(max-width: 640px) 46vw, (max-width: 1280px) 30vw, 22vw"
-                                className="object-cover"
-                              />
-                            </span>
-                            <span
-                              aria-hidden="true"
-                              className="absolute left-1/2 top-0 z-10 flex h-1 w-8 -translate-x-1/2 items-center justify-end rounded-full bg-neutral-700 px-1"
-                            >
-                              <span className="size-1 rounded-full bg-neutral-950" />
-                            </span>
-                          </>
-                        ) : (
-                          <Image
-                            src={image.src}
-                            alt={image.alt}
-                            fill
-                            sizes="(max-width: 640px) 100vw, 50vw"
-                            className="object-contain transition-transform duration-theme group-hover:scale-[1.02]"
-                          />
-                        )}
-                      </button>
+                          type="button"
+                          aria-haspopup="dialog"
+                          aria-label={`${openLabel}: ${image.title}`}
+                          onClick={() => openImage(groupIndex, imageIndex)}
+                          className={
+                            group.mobileMockup
+                              ? "relative mx-auto block aspect-[9/19.5] w-full overflow-hidden rounded-[2.5rem] border-4 border-neutral-800 bg-neutral-800 p-1 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.55)] transition-transform duration-theme hover:-translate-y-1"
+                              : "relative block aspect-video w-full overflow-hidden bg-code-bg"
+                          }
+                        >
+                          {group.mobileMockup ? (
+                            <>
+                              <span className="absolute inset-[5px] overflow-hidden rounded-[2rem] bg-white">
+                                <Image
+                                  src={image.src}
+                                  alt={image.alt}
+                                  fill
+                                  sizes="(max-width: 640px) 46vw, (max-width: 1280px) 30vw, 22vw"
+                                  className="object-cover"
+                                />
+                              </span>
+                              <span
+                                aria-hidden="true"
+                                className="absolute left-1/2 top-0 z-10 flex h-1 w-8 -translate-x-1/2 items-center justify-end rounded-full bg-neutral-700 px-1"
+                              >
+                                <span className="size-1 rounded-full bg-neutral-950" />
+                              </span>
+                            </>
+                          ) : (
+                            <Image
+                              src={image.src}
+                              alt={image.alt}
+                              fill
+                              sizes="(max-width: 640px) 100vw, 50vw"
+                              className="object-contain transition-transform duration-theme group-hover:scale-[1.02]"
+                            />
+                          )}
+                        </button>
                       <figcaption
                         className={`px-2 py-3 text-center font-mono text-xs text-text-secondary ${
                           group.mobileMockup
@@ -283,16 +374,23 @@ export function ImageLightbox({
             closeImage();
           }
         }}
-        className="fixed m-auto max-h-[94dvh] w-[min(96vw,90rem)] max-w-none overflow-hidden rounded-xl border border-border bg-surface p-0 text-text-primary shadow-2xl backdrop:bg-black/80 backdrop:backdrop-blur-sm"
+        style={
+          activeImage &&
+          !activeGroup?.mobileMockup &&
+          activeImageSize?.src === activeImage.src
+            ? { width: activeImageSize.displayWidth }
+            : undefined
+        }
+        className="fixed m-auto max-h-[94dvh] w-fit max-w-[96vw] overflow-hidden rounded-xl border border-border bg-surface p-0 text-text-primary shadow-2xl transition-[width] duration-300 ease-in-out backdrop:bg-black/80 backdrop:backdrop-blur-sm"
       >
         {activeImage && activeGroup && activeLocation && (
           <div>
             <div className="flex items-center justify-between gap-4 border-b border-border px-4 py-3 sm:px-6">
-              <div className="min-w-0">
-                <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-accent">
+              <div className="min-w-0 flex-1">
+                <p className="truncate font-mono text-[9px] uppercase tracking-[0.12em] text-accent">
                   {activeGroup.title}
                 </p>
-                <p className="mt-1 truncate font-mono text-sm text-text-primary">
+                <p className="mt-1 truncate font-mono text-xs text-text-primary">
                   {activeImage.title}
                 </p>
               </div>
@@ -338,7 +436,16 @@ export function ImageLightbox({
               onPointerCancel={() => {
                 pointerStart.current = null;
               }}
-              className={`relative flex h-[min(70dvh,52rem)] min-h-56 items-center justify-center [touch-action:pan-y] ${
+              style={
+                !activeGroup.mobileMockup &&
+                activeImageSize?.src === activeImage.src
+                  ? {
+                      width: activeImageSize.displayWidth,
+                      height: activeImageSize.displayHeight,
+                    }
+                  : undefined
+              }
+              className={`relative flex w-fit max-w-[96vw] max-h-[62dvh] items-center justify-center overflow-auto transition-[width,height] duration-300 ease-in-out [touch-action:pan-y] ${
                 activeGroup.mobileMockup ? "bg-code-bg" : "bg-black"
               }`}
             >
@@ -350,6 +457,8 @@ export function ImageLightbox({
                       alt={activeImage.alt}
                       fill
                       sizes="(max-width: 640px) 80vw, 24rem"
+                      loading="eager"
+                      unoptimized
                       className="pointer-events-none object-cover"
                     />
                   </span>
@@ -364,49 +473,54 @@ export function ImageLightbox({
                 <Image
                   src={activeImage.src}
                   alt={activeImage.alt}
-                  fill
-                  sizes="96vw"
-                  className="pointer-events-none object-contain"
+                  width={
+                    activeImageSize?.src === activeImage.src
+                      ? activeImageSize.width
+                      : 1600
+                  }
+                  height={
+                    activeImageSize?.src === activeImage.src
+                      ? activeImageSize.height
+                      : 900
+                  }
+                  data-full-resolution-image
+                  loading="eager"
+                  unoptimized
+                  style={
+                    activeImageSize?.src === activeImage.src
+                      ? {
+                          width: activeImageSize.displayWidth,
+                          height: activeImageSize.displayHeight,
+                        }
+                      : undefined
+                  }
+                  className="pointer-events-none max-w-[96vw] object-contain transition-[width,height] duration-300 ease-in-out"
                 />
               )}
-              <button
-                type="button"
-                aria-label={previousLabel}
-                onClick={() => moveImage(-1)}
-                className="absolute left-3 top-1/2 z-10 flex size-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/55 text-white backdrop-blur-sm transition-colors hover:bg-black/80 sm:left-5"
-              >
-                <ArrowLeft className="size-5" aria-hidden="true" />
-              </button>
-              <button
-                type="button"
-                aria-label={nextLabel}
-                onClick={() => moveImage(1)}
-                className="absolute right-3 top-1/2 z-10 flex size-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/55 text-white backdrop-blur-sm transition-colors hover:bg-black/80 sm:right-5"
-              >
-                <ArrowRight className="size-5" aria-hidden="true" />
-              </button>
             </div>
 
-            <div className="flex items-center justify-between gap-3 border-t border-border px-4 py-3 sm:px-6">
-              <button
-                type="button"
-                onClick={() => moveImage(-1)}
-                className="inline-flex items-center gap-2 font-mono text-xs text-text-secondary transition-colors hover:text-accent"
-              >
-                <ArrowLeft className="size-4" aria-hidden="true" />
-                <span className="hidden sm:inline">{previousLabel}</span>
-              </button>
-              <p className="text-center font-mono text-[10px] text-text-muted sm:text-xs">
-                {swipeHint}
-              </p>
-              <button
-                type="button"
-                onClick={() => moveImage(1)}
-                className="inline-flex items-center gap-2 font-mono text-xs text-text-secondary transition-colors hover:text-accent"
-              >
-                <span className="hidden sm:inline">{nextLabel}</span>
-                <ArrowRight className="size-4" aria-hidden="true" />
-              </button>
+            <div className="space-y-2 border-t border-border px-3 py-2 sm:px-5">
+              <div className="flex items-center justify-between gap-2">
+                <button
+                  type="button"
+                  onClick={() => moveImage(-1)}
+                  className="inline-flex items-center gap-1.5 font-mono text-[10px] text-text-secondary transition-colors hover:text-accent sm:text-xs"
+                >
+                  <ArrowLeft className="size-4" aria-hidden="true" />
+                  <span className="hidden sm:inline">{previousLabel}</span>
+                </button>
+                <p className="text-center font-mono text-[9px] text-text-muted sm:text-xs">
+                  {swipeHint}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => moveImage(1)}
+                  className="inline-flex items-center gap-1.5 font-mono text-[10px] text-text-secondary transition-colors hover:text-accent sm:text-xs"
+                >
+                  <span className="hidden sm:inline">{nextLabel}</span>
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </button>
+              </div>
             </div>
           </div>
         )}
