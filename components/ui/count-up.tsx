@@ -1,7 +1,7 @@
 "use client";
 
-import { useMotionValue, useReducedMotion, useInView } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useReducedMotion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 type CountUpProps = {
   value: string;
@@ -30,15 +30,18 @@ function parseValue(value: string): ParsedValue | null {
 
 export function CountUp({ value, className }: CountUpProps) {
   const parsed = parseValue(value);
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
   const reducedMotion = useReducedMotion();
-  const motionValue = useMotionValue(0);
-  const [displayValue, setDisplayValue] = useState(parsed?.number.toFixed(parsed.decimals) ?? value);
+  const [displayValue, setDisplayValue] = useState(
+    parsed ? (0).toFixed(parsed.decimals) : value,
+  );
+  const visibleValue =
+    reducedMotion && parsed
+      ? parsed.number.toFixed(parsed.decimals)
+      : displayValue;
 
   useEffect(() => {
     const target = parseValue(value);
-    if (!target || !isInView || reducedMotion) return;
+    if (!target || reducedMotion) return;
 
     const start = performance.now();
     const duration = 800;
@@ -47,8 +50,7 @@ export function CountUp({ value, className }: CountUpProps) {
     const animate = (now: number) => {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - (1 - progress) ** 3;
-      motionValue.set(target.number * eased);
-      setDisplayValue(motionValue.get().toFixed(target.decimals));
+      setDisplayValue((target.number * eased).toFixed(target.decimals));
 
       if (progress < 1) {
         frame = requestAnimationFrame(animate);
@@ -57,15 +59,15 @@ export function CountUp({ value, className }: CountUpProps) {
 
     frame = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(frame);
-  }, [isInView, motionValue, reducedMotion, value]);
+  }, [reducedMotion, value]);
 
   if (!parsed) {
     return <span className={className}>{value}</span>;
   }
 
   return (
-    <span ref={ref} className={className}>
-      {parsed.prefix}{displayValue}{parsed.suffix}
+    <span className={className}>
+      {parsed.prefix}{visibleValue}{parsed.suffix}
     </span>
   );
 }

@@ -126,7 +126,7 @@
     }
   },
   "about": {
-    "label": "05 / ABOUT",
+    "label": "06 / ABOUT",
     "title": "About me.",
     "titleRich": "About <em>me</em>.",
     "headline": "I build applications that turn concrete needs into useful solutions.",
@@ -158,7 +158,7 @@
     "location": "Algiers, Algeria"
   },
   "contact": {
-    "label": "06 / CONTACT",
+    "label": "07 / CONTACT",
     "eyebrow": "Let's talk",
     "title": "An idea? A project? Let's talk.",
     "titleRich": "An idea? A project? <em>Let’s talk</em>.",

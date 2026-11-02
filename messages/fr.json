@@ -126,7 +126,7 @@
     }
   },
   "about": {
-    "label": "05 / À PROPOS",
+    "label": "06 / À PROPOS",
     "title": "À propos de moi.",
     "titleRich": "À propos <em>de moi</em>.",
     "headline": "Je construis des applications qui transforment des besoins concrets en solutions utiles.",
@@ -158,7 +158,7 @@
     "location": "Alger, Algérie"
   },
   "contact": {
-    "label": "06 / CONTACT",
+    "label": "07 / CONTACT",
     "eyebrow": "PARLONS-EN",
     "title": "Une idée ? Un projet ? Parlons-en.",
     "titleRich": "Une idée\u00a0? Un projet\u00a0? <em>Parlons-en</em>.",

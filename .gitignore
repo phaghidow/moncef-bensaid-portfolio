@@ -46,7 +46,7 @@ yarn-error.log*
 /cv_bensaid_moncef_farid.pdf
 /portfolio-design-spec (1).md
 /measure_first_load.py
-/{const
+/[{}]const
 
 # typescript
 *.tsbuildinfo
