@@ -1,0 +1,123 @@
+{
+  "index": "04",
+  "period": "2026 — Projet personnel",
+  "role": "Développement mobile — conception et réalisation",
+  "title": "Tic-Tac-Toe — mes premiers pas avec Flutter",
+  "description": "Première expérience mobile : explorer Flutter et Dart en donnant vie à un Tic-Tac-Toe jouable à deux ou contre une IA.",
+  "client": "Projet personnel",
+  "year": "2026",
+  "metrics": [
+    { "value": "2", "label": "modes : duel local ou partie contre l’IA" },
+    { "value": "3×3", "label": "cases pour construire sa stratégie" },
+    { "value": "Minimax", "label": "une IA qui anticipe les coups" }
+  ],
+  "features": "Deux joueurs, solo contre l’IA, choix du premier joueur, revanche",
+  "stack": ["Flutter", "Dart", "Minimax AI"],
+  "media": {
+    "screenshots": [
+      {
+        "id": "choisir-sa-partie",
+        "title": "01 — Choisir sa partie",
+        "description": "Du premier écran au choix du joueur qui ouvre le match : le parcours commence simplement.",
+        "mobileMockup": true,
+        "images": [
+          {
+            "src": "/projects/tictactoe/home.png",
+            "title": "Choisir son mode",
+            "alt": "Écran d’accueil du jeu avec les choix deux joueurs et partie contre l’ordinateur"
+          },
+          {
+            "src": "/projects/tictactoe/choose-starting-player.png",
+            "title": "À qui le premier coup ?",
+            "alt": "Écran de sélection du joueur qui commence contre l’intelligence artificielle"
+          }
+        ]
+      },
+      {
+        "id": "le-match",
+        "title": "02 — Le match se joue",
+        "description": "Suivre les tours, en duel ou face au Pixel Bot, avec un plateau qui garde le fil de la partie.",
+        "mobileMockup": true,
+        "images": [
+          {
+            "src": "/projects/tictactoe/two-player-board.png",
+            "title": "Le duel commence",
+            "alt": "Plateau de Tic-Tac-Toe à deux joueurs indiquant que c’est au joueur X de jouer"
+          },
+          {
+            "src": "/projects/tictactoe/mid-game.png",
+            "title": "La partie avance",
+            "alt": "Partie de Tic-Tac-Toe en cours avec plusieurs cases jouées et le tour du joueur O"
+          },
+          {
+            "src": "/projects/tictactoe/single-player-game.png",
+            "title": "Face au Pixel Bot",
+            "alt": "Partie solo contre le Pixel Bot avec le joueur X et l’ordinateur O"
+          },
+          {
+            "src": "/projects/tictactoe/single-player-move.png",
+            "title": "À mon tour",
+            "alt": "Plateau solo montrant un coup joué par X et le tour suivant du joueur"
+          }
+        ]
+      },
+      {
+        "id": "les-issues",
+        "title": "03 — Quatre issues possibles",
+        "description": "Une victoire de chaque côté, le bot qui l’emporte ou un match nul : chaque fin de partie a son écran.",
+        "mobileMockup": true,
+        "images": [
+          {
+            "src": "/projects/tictactoe/player-1-victory.png",
+            "title": "Victoire du joueur 1",
+            "alt": "Fin de partie annonçant la victoire du joueur X avec une option pour rejouer"
+          },
+          {
+            "src": "/projects/tictactoe/player-2-victory.png",
+            "title": "Victoire du joueur 2",
+            "alt": "Fin de partie annonçant la victoire du joueur O avec une option pour rejouer"
+          },
+          {
+            "src": "/projects/tictactoe/ai-victory.png",
+            "title": "Le Pixel Bot gagne",
+            "alt": "Fin de partie solo annonçant la victoire du bot et proposant une revanche"
+          },
+          {
+            "src": "/projects/tictactoe/match-draw.png",
+            "title": "Match nul",
+            "alt": "Fin de partie affichant un match nul et proposant de rejouer"
+          }
+        ]
+      }
+    ],
+    "videos": [
+      {
+        "src": "/projects/tictactoe/mobile-demo.mp4",
+        "poster": "/projects/tictactoe/portfolio-mockup.png",
+        "title": "Une partie, du premier écran au résultat",
+        "hook": "Un écran d’accueil. Puis le premier coup.",
+        "description": "Une courte démonstration de cette première expérience mobile avec Flutter.",
+        "duration": "00:18"
+      }
+    ],
+    "videoHeading": "Le jeu en mouvement",
+    "videoIntro": "Une première app mobile se découvre mieux en action : voici Tic-Tac-Toe, manette en main."
+  },
+  "caseStudy": {
+    "context": "Après des projets web et desktop, je voulais explorer un nouvel univers : le mobile. Pour cette première expérience avec Flutter, j’ai choisi un jeu dont les règles tiennent en quelques lignes, mais où chaque interaction compte. Le Tic-Tac-Toe est devenu mon terrain de jeu pour apprendre en construisant.",
+    "role": "Conception et développement mobile avec Flutter et Dart, de l’interface aux modes de partie et à l’adversaire Minimax.",
+    "constraints": [
+      "Découvrir Flutter et Dart en construisant une application réellement jouable",
+      "Faire cohabiter deux expériences : duel local et partie solo contre l’ordinateur",
+      "Rendre lisibles le joueur actif, le choix du premier coup et l’issue de la partie",
+      "Donner au mode solo un adversaire qui anticipe les coups grâce à Minimax"
+    ],
+    "approach": [
+      "Commencer par un écran d’accueil qui rend le choix entre duel et mode solo immédiat",
+      "Faire du plateau et de l’indication du tour le fil conducteur de chaque partie",
+      "Ajouter le choix du joueur qui commence, puis intégrer Minimax pour faire jouer le bot",
+      "Soigner les états de fin de partie et la revanche pour garder le jeu simple à reprendre"
+    ],
+    "outcome": "Le résultat n’est pas juste une grille qui se remplit : c’est un premier jeu mobile avec deux modes, un parcours complet de partie et une IA Minimax. Cette petite arcade marque mon entrée dans l’univers Flutter — un format simple, mais un vrai premier pas dans le développement mobile."
+  }
+}

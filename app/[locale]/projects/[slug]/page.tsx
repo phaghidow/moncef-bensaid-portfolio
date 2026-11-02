@@ -256,14 +256,16 @@ export default async function ProjectCaseStudyPage({
                         id="workflow-video-heading"
                         className="font-display text-xl text-text-primary md:text-2xl"
                       >
-                        {locale === "fr"
-                          ? "Démonstration du workflow"
-                          : "Workflow walkthrough"}
+                        {project.media.videoHeading ??
+                          (locale === "fr"
+                            ? "Démonstration du workflow"
+                            : "Workflow walkthrough")}
                       </h3>
                       <p className="max-w-2xl text-sm leading-relaxed text-text-muted md:whitespace-nowrap">
-                        {locale === "fr"
-                          ? "Un aperçu des étapes clés couvertes par l’application."
-                          : "A walkthrough of the key stages handled by the application."}
+                        {project.media.videoIntro ??
+                          (locale === "fr"
+                            ? "Un aperçu des étapes clés couvertes par l’application."
+                            : "A walkthrough of the key stages handled by the application.")}
                       </p>
                     </div>
                     <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-text-muted">

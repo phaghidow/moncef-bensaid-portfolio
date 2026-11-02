@@ -73,9 +73,13 @@ export function ImageLightbox({
       <div className="space-y-10">
         {groups.map((group, groupIndex) => {
           const featuredImages =
-            group.images.length <= 3 ? group.images : group.images.slice(0, 3);
+            group.mobileMockup || group.images.length <= 3
+              ? group.images
+              : group.images.slice(0, 3);
           const hiddenCount =
-            group.images.length > 3 ? group.images.length - 3 : 0;
+            !group.mobileMockup && group.images.length > 3
+              ? group.images.length - 3
+              : 0;
           const visibleImages =
             hiddenCount > 0 ? featuredImages.slice(0, 2) : featuredImages;
           const overflowImage = group.images[2];
@@ -108,7 +112,7 @@ export function ImageLightbox({
               {group.upcoming && group.images.length === 0 ? (
                 <div
                   className={
-                    group.centered
+                    group.mobileMockup || group.centered
                       ? "flex flex-wrap justify-center gap-4"
                       : "grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
                   }
@@ -138,7 +142,9 @@ export function ImageLightbox({
               ) : (
                 <div
                   className={
-                    group.centered
+                    group.mobileMockup
+                      ? "flex flex-wrap justify-center gap-5"
+                      : group.centered
                       ? "flex flex-wrap justify-center gap-4"
                       : "grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
                   }
@@ -146,28 +152,62 @@ export function ImageLightbox({
                   {visibleImages.map((image, imageIndex) => (
                     <figure
                       key={image.src}
-                      className={`surface group overflow-hidden ${
-                        group.centered
-                          ? "w-full sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-2rem)/3)]"
-                          : ""
-                      }`}
+                      className={
+                        group.mobileMockup
+                          ? "group w-[calc((100%-1.25rem)/2)] sm:w-[calc((100%-2.5rem)/3)] xl:w-[calc((100%-3.75rem)/4)] xl:max-w-64"
+                          : `surface group overflow-hidden ${
+                              group.centered
+                                ? "w-full sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-2rem)/3)]"
+                                : ""
+                            }`
+                      }
                     >
                       <button
                         type="button"
                         aria-haspopup="dialog"
                         aria-label={`${openLabel}: ${image.title}`}
                         onClick={() => openImage(groupIndex, imageIndex)}
-                        className="relative block aspect-video w-full overflow-hidden bg-code-bg"
+                        className={
+                          group.mobileMockup
+                            ? "relative mx-auto block aspect-[9/19.5] w-full overflow-hidden rounded-[2.5rem] border-4 border-neutral-800 bg-neutral-800 p-1 shadow-[0_16px_40px_-16px_rgba(0,0,0,0.55)] transition-transform duration-theme hover:-translate-y-1"
+                            : "relative block aspect-video w-full overflow-hidden bg-code-bg"
+                        }
                       >
-                        <Image
-                          src={image.src}
-                          alt={image.alt}
-                          fill
-                          sizes="(max-width: 640px) 100vw, 50vw"
-                          className="object-contain transition-transform duration-theme group-hover:scale-[1.02]"
-                        />
+                        {group.mobileMockup ? (
+                          <>
+                            <span className="absolute inset-[5px] overflow-hidden rounded-[2rem] bg-white">
+                              <Image
+                                src={image.src}
+                                alt={image.alt}
+                                fill
+                                sizes="(max-width: 640px) 46vw, (max-width: 1280px) 30vw, 22vw"
+                                className="object-cover"
+                              />
+                            </span>
+                            <span
+                              aria-hidden="true"
+                              className="absolute left-1/2 top-0 z-10 flex h-1 w-8 -translate-x-1/2 items-center justify-end rounded-full bg-neutral-700 px-1"
+                            >
+                              <span className="size-1 rounded-full bg-neutral-950" />
+                            </span>
+                          </>
+                        ) : (
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            fill
+                            sizes="(max-width: 640px) 100vw, 50vw"
+                            className="object-contain transition-transform duration-theme group-hover:scale-[1.02]"
+                          />
+                        )}
                       </button>
-                      <figcaption className="border-t border-border px-4 py-3 font-mono text-xs text-text-secondary">
+                      <figcaption
+                        className={`px-2 py-3 text-center font-mono text-xs text-text-secondary ${
+                          group.mobileMockup
+                            ? ""
+                            : "border-t border-border px-4"
+                        }`}
+                      >
                         {image.title}
                       </figcaption>
                     </figure>
@@ -298,15 +338,37 @@ export function ImageLightbox({
               onPointerCancel={() => {
                 pointerStart.current = null;
               }}
-              className="relative flex h-[min(70dvh,52rem)] min-h-56 items-center justify-center bg-black [touch-action:pan-y]"
+              className={`relative flex h-[min(70dvh,52rem)] min-h-56 items-center justify-center [touch-action:pan-y] ${
+                activeGroup.mobileMockup ? "bg-code-bg" : "bg-black"
+              }`}
             >
-              <Image
-                src={activeImage.src}
-                alt={activeImage.alt}
-                fill
-                sizes="96vw"
-                className="pointer-events-none object-contain"
-              />
+              {activeGroup.mobileMockup ? (
+                <div className="relative h-[min(70dvh,52rem)] w-auto aspect-[9/19.5] max-w-[82vw] overflow-hidden rounded-[2.5rem] border-4 border-neutral-800 bg-neutral-800 p-1">
+                  <span className="absolute inset-[5px] overflow-hidden rounded-[2rem] bg-white">
+                    <Image
+                      src={activeImage.src}
+                      alt={activeImage.alt}
+                      fill
+                      sizes="(max-width: 640px) 80vw, 24rem"
+                      className="pointer-events-none object-cover"
+                    />
+                  </span>
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-1/2 top-0 z-10 flex h-1 w-8 -translate-x-1/2 items-center justify-end rounded-full bg-neutral-700 px-1"
+                  >
+                    <span className="size-1 rounded-full bg-neutral-950" />
+                  </span>
+                </div>
+              ) : (
+                <Image
+                  src={activeImage.src}
+                  alt={activeImage.alt}
+                  fill
+                  sizes="96vw"
+                  className="pointer-events-none object-contain"
+                />
+              )}
               <button
                 type="button"
                 aria-label={previousLabel}

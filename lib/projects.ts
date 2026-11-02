@@ -10,6 +10,7 @@ export type ProjectGalleryGroup = {
   images: { src: string; title: string; alt: string }[];
   upcoming?: string[];
   centered?: boolean;
+  mobileMockup?: boolean;
 };
 
 export type ProjectVideo = {
@@ -36,6 +37,8 @@ export type Project = {
   media?: {
     screenshots: ProjectGalleryGroup[];
     videos: ProjectVideo[];
+    videoHeading?: string;
+    videoIntro?: string;
     exportGallery?: ProjectGalleryGroup;
     closingGallery?: ProjectGalleryGroup;
   };
