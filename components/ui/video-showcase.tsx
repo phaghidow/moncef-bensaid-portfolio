@@ -71,7 +71,7 @@ function VideoCard({
                 sizes={
                   isMobileMockup
                     ? "(max-width: 768px) 80vw, 288px"
-                    : "(max-width: 768px) 100vw, 50vw"
+                    : "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 }
                 className={`object-cover transition-transform duration-500 group-hover:scale-[1.03] ${
                   isMobileMockup ? "object-top" : ""

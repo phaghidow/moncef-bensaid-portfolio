@@ -10,6 +10,7 @@ type CountUpProps = {
 
 type ParsedValue = {
   prefix: string;
+  numberText: string;
   number: number;
   suffix: string;
   decimals: number;
@@ -22,6 +23,7 @@ function parseValue(value: string): ParsedValue | null {
   const numberText = match[1];
   return {
     prefix: value.slice(0, match.index),
+    numberText,
     number: Number(numberText),
     suffix: value.slice(match.index + numberText.length),
     decimals: numberText.includes(".") ? numberText.split(".")[1].length : 0,
@@ -31,17 +33,11 @@ function parseValue(value: string): ParsedValue | null {
 export function CountUp({ value, className }: CountUpProps) {
   const parsed = parseValue(value);
   const reducedMotion = useReducedMotion();
-  const [displayValue, setDisplayValue] = useState(
-    parsed ? (0).toFixed(parsed.decimals) : value,
-  );
-  const visibleValue =
-    reducedMotion && parsed
-      ? parsed.number.toFixed(parsed.decimals)
-      : displayValue;
+  const [displayValue, setDisplayValue] = useState(parsed?.numberText ?? value);
 
   useEffect(() => {
     const target = parseValue(value);
-    if (!target || reducedMotion) return;
+    if (!target || reducedMotion !== false) return;
 
     const start = performance.now();
     const duration = 800;
@@ -67,7 +63,10 @@ export function CountUp({ value, className }: CountUpProps) {
 
   return (
     <span className={className}>
-      {parsed.prefix}{visibleValue}{parsed.suffix}
+      <span aria-hidden="true">
+        {parsed.prefix}{displayValue}{parsed.suffix}
+      </span>
+      <span className="sr-only">{value}</span>
     </span>
   );
 }

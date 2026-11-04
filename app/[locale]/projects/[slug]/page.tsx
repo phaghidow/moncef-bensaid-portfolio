@@ -7,6 +7,7 @@ import { ImageLightbox } from "@/components/ui/image-lightbox";
 import { HoverImageLink } from "@/components/ui/hover-image-link";
 import { VideoShowcase } from "@/components/ui/video-showcase";
 import { getProject, getProjects, getProjectPreview, getProjectSlugs } from "@/lib/projects";
+import { absoluteUrl, metadataBase } from "@/lib/site";
 
 const backHref = (locale: string) => `/${locale}/#projets`;
 
@@ -35,9 +36,6 @@ function ProjectMockup({ label }: { label: string }) {
   );
 }
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://moncef-bensaid.dev";
-const metadataBase = new URL(siteUrl);
-
 export async function generateStaticParams() {
   return ["fr", "en"].flatMap((locale) =>
     getProjectSlugs().map((slug) => ({
@@ -59,7 +57,9 @@ export async function generateMetadata({
     return {};
   }
 
-  const canonicalPath = locale === "fr" ? `/projets/${slug}` : `/projects/${slug}`;
+  const canonicalPath = `/${locale}/${locale === "fr" ? "projets" : "projects"}/${slug}`;
+  const frenchPath = `/fr/projets/${slug}`;
+  const englishPath = `/en/projects/${slug}`;
 
   return {
     metadataBase,
@@ -68,14 +68,14 @@ export async function generateMetadata({
     alternates: {
       canonical: canonicalPath,
       languages: {
-        fr: locale === "fr" ? canonicalPath : `/projets/${slug}`,
-        en: locale === "en" ? canonicalPath : `/projects/${slug}`,
+        fr: frenchPath,
+        en: englishPath,
       },
     },
     openGraph: {
       title: `${project.title} — Moncef Bensaid`,
       description: project.caseStudy.context,
-      url: new URL(canonicalPath, metadataBase).toString(),
+      url: absoluteUrl(canonicalPath),
       locale: locale === "fr" ? "fr_FR" : "en_US",
       type: "article",
     },

@@ -1,39 +1,39 @@
 import type { MetadataRoute } from "next";
 import { getProjectSlugs } from "@/lib/projects";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://moncef-bensaid.dev";
+import { absoluteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const locales = ["fr", "en"] as const;
 
-  const entries: MetadataRoute.Sitemap = [
-    ...locales.flatMap((locale) => {
-      const homePath = locale === "fr" ? "/" : "/en";
+  const homePaths = {
+    fr: "/fr",
+    en: "/en",
+  } as const;
+  const projectPath = (locale: (typeof locales)[number], slug: string) =>
+    `/${locale}/${locale === "fr" ? "projets" : "projects"}/${slug}`;
 
-      return [
-        {
-          url: new URL(homePath, siteUrl).toString(),
-          lastModified: new Date(),
-          alternates: {
-            languages: {
-              fr: new URL("/", siteUrl).toString(),
-              en: new URL("/en", siteUrl).toString(),
-            },
+  return [
+    ...locales.map((locale) => ({
+      url: absoluteUrl(homePaths[locale]),
+      lastModified: new Date(),
+      alternates: {
+        languages: {
+          fr: absoluteUrl(homePaths.fr),
+          en: absoluteUrl(homePaths.en),
+        },
+      },
+    })),
+    ...getProjectSlugs().flatMap((slug) =>
+      locales.map((locale) => ({
+        url: absoluteUrl(projectPath(locale, slug)),
+        lastModified: new Date(),
+        alternates: {
+          languages: {
+            fr: absoluteUrl(projectPath("fr", slug)),
+            en: absoluteUrl(projectPath("en", slug)),
           },
         },
-        ...getProjectSlugs().map((slug) => ({
-          url: new URL(locale === "fr" ? `/projets/${slug}` : `/projects/${slug}`, siteUrl).toString(),
-          lastModified: new Date(),
-          alternates: {
-            languages: {
-              fr: new URL(`/projets/${slug}`, siteUrl).toString(),
-              en: new URL(`/projects/${slug}`, siteUrl).toString(),
-            },
-          },
-        })),
-      ];
-    }),
+      })),
+    ),
   ];
-
-  return entries;
 }

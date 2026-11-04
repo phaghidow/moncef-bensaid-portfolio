@@ -8,9 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { LocaleTransition } from "@/components/ui/locale-transition";
 import { MotionProvider } from "@/components/ui/motion-provider";
 import { routing } from "@/i18n/routing";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://moncef-bensaid.dev";
-const metadataBase = new URL(siteUrl);
+import { absoluteUrl, metadataBase } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,8 +41,8 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
 
-  const homePath = locale === "fr" ? "/" : "/en";
-  const canonicalUrl = new URL(homePath, metadataBase).toString();
+  const homePath = `/${locale}`;
+  const canonicalUrl = absoluteUrl(homePath);
 
   return {
     metadataBase,
@@ -53,7 +51,7 @@ export async function generateMetadata({
     alternates: {
       canonical: homePath,
       languages: {
-        fr: "/",
+        fr: "/fr",
         en: "/en",
       },
     },

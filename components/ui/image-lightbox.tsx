@@ -287,7 +287,7 @@ export function ImageLightbox({
                               src={image.src}
                               alt={image.alt}
                               fill
-                              sizes="(max-width: 640px) 100vw, 50vw"
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                               className="object-contain transition-transform duration-theme group-hover:scale-[1.02]"
                             />
                           )}
@@ -323,7 +323,7 @@ export function ImageLightbox({
                           src={overflowImage.src}
                           alt=""
                           fill
-                          sizes="(max-width: 640px) 100vw, 50vw"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           className="object-contain opacity-55 transition-transform duration-theme group-hover:scale-[1.02]"
                         />
                         <span className="absolute inset-0 flex items-center justify-center bg-black/45 font-mono text-2xl font-medium text-white transition-colors group-hover:bg-black/55">
@@ -458,7 +458,6 @@ export function ImageLightbox({
                       fill
                       sizes="(max-width: 640px) 80vw, 24rem"
                       loading="eager"
-                      unoptimized
                       className="pointer-events-none object-cover"
                     />
                   </span>
@@ -484,8 +483,8 @@ export function ImageLightbox({
                       : 900
                   }
                   data-full-resolution-image
+                  sizes="96vw"
                   loading="eager"
-                  unoptimized
                   style={
                     activeImageSize?.src === activeImage.src
                       ? {
