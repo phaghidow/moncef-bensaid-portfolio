@@ -9,7 +9,7 @@ export async function Footer() {
   return (
     <footer className="border-t border-border px-6 py-8 md:px-8">
       <div className="mx-auto flex max-w-container flex-col gap-3 font-mono text-xs text-text-muted md:flex-row md:items-center md:justify-between">
-        <p>{t("rights")} — {t("builtWith")}</p>
+        <p>{t("rights")}</p>
         <EasterEggTerminalLoader lines={lines} closeLabel={easterEgg("close")} hint={t("terminalHint")} />
       </div>
     </footer>

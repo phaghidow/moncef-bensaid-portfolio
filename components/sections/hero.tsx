@@ -4,7 +4,6 @@ import { Reveal } from "@/components/ui/reveal";
 
 export async function Hero() {
   const t = await getTranslations("hero");
-  const tc = await getTranslations("contact");
 
   const cvHref = "/cv_bensaid_moncef_farid.pdf";
 
@@ -42,10 +41,12 @@ export async function Hero() {
         {/* Masthead : positionnement + localisation */}
         <div className="mb-10 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-border pb-4 md:mb-14">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-text-muted">
-            {t("kicker")}
+            <span className="hidden sm:inline">{t("kicker")}</span>
+            <span className="sm:hidden">{t("kickerMobile")}</span>
           </p>
           <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-text-muted">
-            {tc("location")}
+            <span className="hidden sm:inline">{t("location")}</span>
+            <span className="sm:hidden">{t("locationMobile")}</span>
           </span>
         </div>
 
@@ -89,14 +90,15 @@ export async function Hero() {
         </div>
 
         {/* Bas : disponibilité (gauche) / défiler (droite) */}
-        <div className="mt-20 flex items-center justify-between gap-6 border-t border-border pt-5 md:mt-28">
+        <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between gap-6 border-t border-border pt-5 md:bottom-8 md:left-8 md:right-8">
           <div className="flex items-center gap-3">
             <span
               aria-hidden="true"
               className="block h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]"
             />
             <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-text-muted">
-              {tc("availability")}
+              <span className="hidden sm:inline">{t("availability")}</span>
+              <span className="sm:hidden">{t("availabilityMobile")}</span>
             </span>
           </div>
 

@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/ui/reveal";
 import { TimelineItem } from "@/components/sections/experience-timeline-item";
+import { SectionTitle } from "@/components/ui/section-title";
 
 type Experience = {
   role: string;
@@ -29,15 +30,13 @@ export async function Experience() {
         <Reveal>
           <div className="border-b border-border pb-8 md:pb-10">
             <p className="section-label">{t("label")}</p>
-            <h2
-              id="experience-title"
-              className="mt-4 font-display text-section-title font-medium tracking-tight text-text-primary"
-            >
-              {t("title")}
-              <span className="ml-2 font-display font-normal italic text-text-secondary">
-                {t("titleAccent")}
-              </span>
-            </h2>
+            <SectionTitle id="experience-title">
+              {t.rich("titleRich", {
+                em: (chunks) => (
+                  <em className="font-normal italic text-text-secondary">{chunks}</em>
+                ),
+              })}
+            </SectionTitle>
           </div>
         </Reveal>
 

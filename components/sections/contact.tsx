@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { FactRow } from "@/components/ui/fact-row";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionTitle } from "@/components/ui/section-title";
 
 const emailAddress = "moncefbensai123@gmail.com";
 
@@ -28,16 +29,13 @@ export async function Contact() {
           <div className="lg:sticky lg:top-28 lg:col-span-4 lg:self-start">
             <Reveal>
               <p className="section-label">{t("label")}</p>
-              <h2
-                id="contact-title"
-                className="mt-4 font-display text-[clamp(2rem,4vw,2.75rem)] font-medium leading-[1.05] tracking-tight text-text-primary"
-              >
+              <SectionTitle id="contact-title">
                 {t.rich("titleRich", {
                   em: (chunks) => (
                     <em className="font-normal italic text-text-secondary">{chunks}</em>
                   ),
                 })}
-              </h2>
+              </SectionTitle>
               <span
                 aria-hidden="true"
                 className="mt-6 block h-px w-12 bg-text-primary"
@@ -74,21 +72,9 @@ export async function Contact() {
               </a>
             </Reveal>
 
-            {/* Fiche : localisation, disponibilité, réseaux */}
+            {/* Fiche : réseaux */}
             <Reveal>
               <dl className="border-t border-border">
-                <FactRow label={t("locationLabel")}>{t("location")}</FactRow>
-
-                <FactRow label={t("availabilityLabel")}>
-                  <span className="inline-flex items-start gap-2">
-                    <span
-                      aria-hidden="true"
-                      className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
-                    />
-                    {t("availability")}
-                  </span>
-                </FactRow>
-
                 {socialLinks.map(({ labelKey, href, icon: Icon }) => (
                   <FactRow key={labelKey} label={t(labelKey)}>
                     <a

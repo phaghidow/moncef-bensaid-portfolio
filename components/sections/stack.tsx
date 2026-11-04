@@ -18,10 +18,14 @@ import {
   SiGit,
   SiGithub,
   SiFigma,
+  SiFlutter,
+  SiDart,
 } from "react-icons/si";
+import { FaJava } from "react-icons/fa6";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionTitle } from "@/components/ui/section-title";
 
-// 18 tuiles = 3 lignes de 6 (lg), 6 de 3 (sm), 9 de 2 (mobile) : jamais d'orpheline.
+// 21 tuiles = 3 lignes de 7 (lg), 7 de 3 (sm), 11 de 2 (mobile).
 // core = stack principale (profil CV). PyQt5 : SiQt est la référence la plus proche.
 const techs = [
   { key: "laravel", group: "backend", core: true, Icon: SiLaravel },
@@ -44,6 +48,9 @@ const techs = [
   { key: "git", group: "versioning", core: false, Icon: SiGit },
   { key: "github", group: "versioning", core: false, Icon: SiGithub },
   { key: "figma", group: "design", core: false, Icon: SiFigma },
+  { key: "java", group: "language", core: false, Icon: FaJava },
+  { key: "flutter", group: "frontend", core: false, Icon: SiFlutter },
+  { key: "dart", group: "language", core: false, Icon: SiDart },
 ] as const;
 
 export async function Stack() {
@@ -62,15 +69,13 @@ export async function Stack() {
             <div>
               <p className="section-label">{t("label")}</p>
 
-              <h2
-                id="stack-title"
-                className="mt-4 font-display text-section-title font-medium tracking-tight text-text-primary"
-              >
-                {t("title")}
-                <span className="ml-2 font-display font-normal italic text-text-secondary">
-                  {t("titleAccent")}
-                </span>
-              </h2>
+              <SectionTitle id="stack-title">
+                {t.rich("titleRich", {
+                  em: (chunks) => (
+                    <em className="font-normal italic text-text-secondary">{chunks}</em>
+                  ),
+                })}
+              </SectionTitle>
             </div>
 
             <p className="max-w-xs text-sm leading-6 text-text-secondary md:text-right">
@@ -79,15 +84,15 @@ export async function Stack() {
           </div>
         </Reveal>
 
-        {/* Grille : 2 cols mobile / 3 tablette / 6 desktop */}
+        {/* Grille : 2 cols mobile / 3 tablette / 7 desktop */}
         <Reveal className="mt-8 md:mt-10">
-          <ul className="grid grid-cols-2 border-l border-t border-border sm:grid-cols-3 lg:grid-cols-6">
+          <ul className="grid grid-cols-2 border-l border-t border-border sm:grid-cols-3 lg:grid-cols-7">
             {techs.map(({ key, group, core, Icon }) => (
               <li
                 key={key}
                 className={[
-                  "group relative flex min-h-44 list-none flex-col justify-between overflow-hidden",
-                  "border-b border-r border-border bg-surface p-4",
+                  "group relative flex min-h-36 list-none flex-col justify-between overflow-hidden",
+                  "border-b border-r border-border bg-surface p-3",
                   "shadow-[inset_0_1px_0_rgba(255,255,255,0.5)] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]",
                   "transition-colors duration-theme ease-smooth hover:bg-accent-soft",
                 ].join(" ")}
@@ -109,15 +114,15 @@ export async function Stack() {
                 </div>
 
                 {/* Centre : le logo est l'information principale */}
-                <div className="flex flex-1 items-center justify-center py-4">
+                <div className="flex flex-1 items-center justify-center py-3">
                   <Icon
                     aria-hidden="true"
-                    className="h-10 w-10 text-text-secondary transition-colors duration-theme group-hover:text-accent"
+                    className="h-8 w-8 text-text-secondary transition-colors duration-theme group-hover:text-accent"
                   />
                 </div>
 
                 {/* Bas : nom */}
-                <div className="border-t border-border pt-3">
+                <div className="border-t border-border pt-2">
                   <span className="block font-sans text-sm font-medium text-text-primary">
                     {t(`items.${key}`)}
                   </span>

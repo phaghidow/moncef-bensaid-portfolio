@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { FactRow } from "@/components/ui/fact-row";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionTitle } from "@/components/ui/section-title";
 
 export async function About() {
   const t = await getTranslations("about");
@@ -18,10 +19,7 @@ export async function About() {
           <div className="lg:sticky lg:top-28 lg:col-span-4 lg:self-start">
             <Reveal>
               <p className="section-label">{t("label")}</p>
-              <h2
-                id="about-title"
-                className="mt-4 font-display text-[clamp(2rem,4vw,2.75rem)] font-medium leading-[1.05] tracking-tight text-text-primary"
-              >
+              <SectionTitle id="about-title">
                 {t.rich("titleRich", {
                   em: (chunks) => (
                     <em className="font-normal italic text-text-secondary">
@@ -29,7 +27,7 @@ export async function About() {
                     </em>
                   ),
                 })}
-              </h2>
+              </SectionTitle>
               <span
                 aria-hidden="true"
                 className="mt-6 block h-px w-12 bg-text-primary"
@@ -85,7 +83,7 @@ export async function About() {
             {/* 4. Atouts numérotés */}
             <Reveal>
               <p className="section-label mb-4">{t("qualitiesLabel")}</p>
-              <ol className="grid grid-cols-2 gap-x-6 lg:grid-cols-3">
+              <ol className="grid grid-cols-2 gap-x-6 lg:grid-cols-4">
                 {qualities.map((quality, i) => (
                   <li
                     key={quality}

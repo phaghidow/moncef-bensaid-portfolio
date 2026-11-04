@@ -18,18 +18,22 @@
   },
   "hero": {
     "kicker": "Software engineering · Systems security",
+    "kickerMobile": "Engineering · Security",
     "name": "Moncef Bensaid",
     "lead": "Full Stack developer — I build web and desktop applications that solve real business problems, from requirements analysis to production.",
     "leadRich": "Full Stack developer — I build web and desktop applications that solve real <em>business</em> problems, from requirements analysis to production.",
     "primaryCta": "View my projects",
     "secondaryCta": "Download resume",
-    "scroll": "Scroll"
+    "scroll": "Scroll",
+    "location": "Algiers, Algeria",
+    "locationMobile": "Algiers",
+    "availability": "Available for new opportunities",
+    "availabilityMobile": "Available"
   },
   "stack": {
     "label": "02 / STACK",
-    "title": "Technologies",
-    "titleAccent": "I build with.",
-    "intro": "The tools I use on my projects, from back-end to interface.",
+    "titleRich": "Technologies <em>I build with.</em>",
+    "intro": "From back-end to interface.",
     "core": "Core stack",
     "count": "{count} technologies",
     "groups": {
@@ -61,19 +65,20 @@
       "tailwind": "Tailwind CSS",
       "git": "Git",
       "github": "GitHub",
-      "figma": "Figma"
+      "figma": "Figma",
+      "java": "Java",
+      "flutter": "Flutter",
+      "dart": "Dart"
     }
   },
   "projects": {
     "label": "03 / Projects",
-    "title": "Selected works",
-    "wip": "in progress",
-    "indexHint": "Click a work to read the case study"
+    "titleRich": "Selected <em>works.</em>",
+    "wip": "in progress"
   },
   "experience": {
     "label": "04 / EXPERIENCE",
-    "title": "Professional",
-    "titleAccent": "experience.",
+    "titleRich": "Work <em>experience.</em>",
     "items": {
       "telecom": {
         "role": "Full Stack Developer — Intern",
@@ -100,7 +105,7 @@
   },
   "education": {
     "label": "05 / Education",
-    "title": "Education",
+    "titleRich": "Academic <em>background.</em>",
     "items": {
       "master": {
         "degree": "Master's — Networks and Embedded Systems",
@@ -127,8 +132,7 @@
   },
   "about": {
     "label": "06 / ABOUT",
-    "title": "About me.",
-    "titleRich": "About <em>me</em>.",
+    "titleRich": "About <em>me.</em>",
     "headline": "I build applications that turn concrete needs into useful solutions.",
     "quote": "I build software, and I’m specializing where it has to hold up: <mark>networks, IoT, cybersecurity</mark>.",
     "seal": "NETWORKS • IOT • CYBERSECURITY • DEVELOPMENT •\u00a0",
@@ -150,9 +154,7 @@
       "Fast learner",
       "Analytical thinking",
       "Self-directed learning",
-      "Technology watch",
-      "Teamwork",
-      "Time management"
+      "Teamwork"
     ],
     "locationLabel": "Location",
     "location": "Algiers, Algeria"
@@ -160,21 +162,15 @@
   "contact": {
     "label": "07 / CONTACT",
     "eyebrow": "Let's talk",
-    "title": "An idea? A project? Let's talk.",
     "titleRich": "An idea? A project? <em>Let’s talk</em>.",
     "lead": "An idea to build, a project to develop, or an opportunity to discuss? Let's talk.",
     "emailLabel": "Email",
     "emailCTA": "Get in touch",
     "githubLabel": "GitHub",
-    "linkedinLabel": "LinkedIn",
-    "locationLabel": "Location",
-    "location": "Algiers, Algeria",
-    "availabilityLabel": "Availability",
-    "availability": "Available for new opportunities"
+    "linkedinLabel": "LinkedIn"
     },
   "footer": {
     "rights": "© 2026 Moncef Bensaid — All rights reserved",
-    "builtWith": "Designed and built with Next.js & Tailwind CSS",
     "terminalHint": "Tip: type \"dev\" anywhere"
   },
   "easterEgg": {

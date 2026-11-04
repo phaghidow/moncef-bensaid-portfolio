@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/ui/reveal";
 import { HoverImageLink } from "@/components/ui/hover-image-link";
+import { SectionTitle } from "@/components/ui/section-title";
 import { getProjects, getProjectPreview } from "@/lib/projects";
 
 export async function Projects() {
@@ -14,10 +15,13 @@ export async function Projects() {
       <div className="mx-auto max-w-container px-6 md:px-8">
         <Reveal>
           <p className="section-label">{t("label")}</p>
-          <h2 id="projects-title" className="mt-3 font-display font-medium text-index-title">
-            {t("title")}
-          </h2>
-          <p className="mt-4 font-mono text-sm text-text-muted">{t("indexHint")}</p>
+          <SectionTitle id="projects-title">
+            {t.rich("titleRich", {
+              em: (chunks) => (
+                <em className="font-normal italic text-text-secondary">{chunks}</em>
+              ),
+            })}
+          </SectionTitle>
         </Reveal>
 
         <div className="mt-10 space-y-0 md:mt-16">
@@ -50,10 +54,10 @@ export async function Projects() {
                       <span className="meta transition-colors duration-theme">
                         {project.client} · {project.year}
                       </span>
-                      <ArrowRight className="size-4 text-text-muted transition-all duration-theme group-hover:translate-x-1 group-hover:text-accent" />
+                      <ArrowRight className="size-4 text-text-muted opacity-100 transition-all duration-theme group-hover:translate-x-1 group-hover:text-accent" />
                     </div>
 
-                    <ArrowRight className="size-5 text-text-muted transition-all duration-theme group-hover:translate-x-1 group-hover:text-accent md:hidden" />
+                    <ArrowRight className="size-5 text-text-muted opacity-100 transition-all duration-theme group-hover:translate-x-1 group-hover:text-accent md:hidden" />
                   </div>
 
                   <div className="mt-3 flex items-center justify-between md:hidden">

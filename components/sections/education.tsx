@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import { Reveal } from "@/components/ui/reveal";
+import { SectionTitle } from "@/components/ui/section-title";
 
 type Education = {
   degree: string;
@@ -36,7 +37,13 @@ export async function Education() {
       <div className="mx-auto max-w-container px-6 md:px-8">
         <Reveal>
           <p className="section-label">{t("label")}</p>
-          <h2 id="education-title" className="mt-3 font-display font-medium text-section-title">{t("title")}</h2>
+          <SectionTitle id="education-title">
+            {t.rich("titleRich", {
+              em: (chunks) => (
+                <em className="font-normal italic text-text-secondary">{chunks}</em>
+              ),
+            })}
+          </SectionTitle>
         </Reveal>
         <Reveal className="mt-10">
           {educationKeys.map((key) => <EducationItem key={key} education={education[key]} />)}

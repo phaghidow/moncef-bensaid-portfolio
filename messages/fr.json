@@ -18,18 +18,22 @@
   },
   "hero": {
     "kicker": "Ingénierie logicielle · Sécurité des systèmes",
+    "kickerMobile": "Ingénierie · Sécurité",
     "name": "Moncef Bensaid",
     "lead": "Développeur Full Stack — je conçois des applications web et desktop qui résolvent de vrais problèmes métier, de l'analyse des besoins à la mise en production.",
     "leadRich": "Développeur Full Stack — je conçois des applications web et desktop qui résolvent de vrais problèmes de <em>métier</em>, de l’analyse des besoins à la mise en production.",
     "primaryCta": "Voir mes projets",
     "secondaryCta": "Télécharger le CV",
-    "scroll": "Défiler"
+    "scroll": "Défiler",
+    "location": "Alger, Algérie",
+    "locationMobile": "Alger",
+    "availability": "Disponible pour de nouvelles opportunités",
+    "availabilityMobile": "Disponible"
   },
   "stack": {
     "label": "02 / STACK",
-    "title": "Les technologies",
-    "titleAccent": "avec lesquelles je construis.",
-    "intro": "Les outils que j'utilise sur mes projets, du back-end à l'interface.",
+    "titleRich": "Les technologies <em>avec lesquelles je construis.</em>",
+    "intro": "Du back-end à l'interface.",
     "core": "Stack principale",
     "count": "{count} technologies",
     "groups": {
@@ -61,19 +65,20 @@
       "tailwind": "Tailwind CSS",
       "git": "Git",
       "github": "GitHub",
-      "figma": "Figma"
+      "figma": "Figma",
+      "java": "Java",
+      "flutter": "Flutter",
+      "dart": "Dart"
     }
   },
   "projects": {
     "label": "03 / Projets",
-    "title": "Travaux sélectionnés",
-    "wip": "en cours",
-    "indexHint": "Cliquer sur un travail pour lire l'étude de cas"
+    "titleRich": "Travaux <em>sélectionnés.</em>",
+    "wip": "en cours"
   },
   "experience": {
     "label": "04 / PARCOURS",
-    "title": "Expérience",
-    "titleAccent": "professionnelle.",
+    "titleRich": "Expérience <em>professionnelle.</em>",
     "items": {
       "telecom": {
         "role": "Développeur Full Stack — Stagiaire",
@@ -100,7 +105,7 @@
   },
   "education": {
     "label": "05 / Formation",
-    "title": "Formation",
+    "titleRich": "Formation <em>académique.</em>",
     "items": {
       "master": {
         "degree": "Master — Réseaux et Systèmes Embarqués",
@@ -127,7 +132,6 @@
   },
   "about": {
     "label": "06 / À PROPOS",
-    "title": "À propos de moi.",
     "titleRich": "À propos <em>de moi</em>.",
     "headline": "Je construis des applications qui transforment des besoins concrets en solutions utiles.",
     "quote": "Je construis des logiciels, et je me spécialise là où ils doivent tenir\u00a0: <mark>réseaux, IoT, cybersécurité</mark>.",
@@ -150,9 +154,7 @@
       "Apprentissage rapide",
       "Esprit d’analyse",
       "Auto-formation",
-      "Veille technologique",
-      "Travail en équipe",
-      "Gestion du temps"
+      "Travail en équipe"
     ],
     "locationLabel": "Localisation",
     "location": "Alger, Algérie"
@@ -160,21 +162,15 @@
   "contact": {
     "label": "07 / CONTACT",
     "eyebrow": "PARLONS-EN",
-    "title": "Une idée ? Un projet ? Parlons-en.",
     "titleRich": "Une idée\u00a0? Un projet\u00a0? <em>Parlons-en</em>.",
     "lead": "Une idée à concrétiser, un projet à développer ou une opportunité à partager ? Échangeons.",
     "emailLabel": "Email",
     "emailCTA": "Écrivez-moi",
     "githubLabel": "GitHub",
-    "linkedinLabel": "LinkedIn",
-    "locationLabel": "Localisation",
-    "location": "Alger, Algérie",
-    "availabilityLabel": "Disponibilité",
-    "availability": "Disponible pour de nouvelles opportunités"
+    "linkedinLabel": "LinkedIn"
   },
   "footer": {
     "rights": "© 2026 Moncef Bensaid — Tous droits réservés",
-    "builtWith": "Conçu et développé avec Next.js & Tailwind CSS",
     "terminalHint": "Astuce : tapez « dev » n'importe où"
   },
   "easterEgg": {
