@@ -83,21 +83,21 @@
       "telecom": {
         "role": "Développeur Full Stack — Stagiaire",
         "company": "Algérie Télécom (DSI)",
-        "period": "Avril — Juillet 2025",
+        "period": "AVRIL — JUILLET 2025",
         "location": "El Mohammadia, Alger",
         "description": "Conception et développement d'une plateforme web de gestion de projets (Laravel / Vue.js) pour la DSI, de l'analyse des besoins à la validation fonctionnelle."
       },
       "freelance": {
         "role": "Développeur Python — Freelance",
         "company": "SPA AADL Gest-Immo",
-        "period": "Juillet — Novembre 2024",
+        "period": "JUILLET — NOVEMBRE 2024",
         "location": "Les Bananiers, Alger",
         "description": "Développement d'une application desktop automatisant l'évaluation de plus de 50 dossiers d'appels d'offres, avec une réduction de plus de 70 % du temps d'évaluation."
       },
       "teacher": {
         "role": "Enseignant — École privée",
         "company": "Cycle secondaire et moyen",
-        "period": "Mars — Juin 2025",
+        "period": "MARS — JUIN 2025",
         "location": "Birtouta, Alger",
         "description": "Enseignement des mathématiques et de la physique, avec adaptation des contenus pédagogiques et accompagnement individualisé des élèves."
       }
@@ -120,12 +120,13 @@
       "bac": {
         "degree": "Baccalauréat — Sciences Expérimentales",
         "school": "Lycée Ahmed Serir",
-        "period": "2022"
+        "period": "2022",
+        "note": "Mention Très bien"
       },
       "code213": {
         "degree": "Certificat — Coding with Python",
         "school": "École Code 213",
-        "period": "Juillet — Octobre 2024",
+        "period": "JUIL. — OCT. 2024",
         "note": "POO · Web development · Data Science"
       }
     }
@@ -137,8 +138,6 @@
     "quote": "Je construis des logiciels, et je me spécialise là où ils doivent tenir\u00a0: <mark>réseaux, IoT, cybersécurité</mark>.",
     "seal": "RÉSEAUX • IOT • CYBERSÉCURITÉ • DÉVELOPPEMENT •\u00a0",
     "bio": "Développeur Full Stack, j’ai conçu et livré des applications web et desktop pour des organisations réelles, de l’analyse des besoins à la mise en production. Aujourd’hui en Master Réseaux et Systèmes Embarqués, j’oriente ma pratique vers les réseaux, l’IoT et la cybersécurité\u00a0: j’apprends vite, et je veux comprendre ce qui fait tourner, et protège, le code que j’écris.",
-    "factsEducationLabel": "Formation",
-    "factsEducation": "Master Réseaux et Systèmes Embarqués — Université d’Alger 1",
     "factsFoundationLabel": "Socle",
     "factsFoundation": "Développement Full Stack — Laravel, Vue.js, React, FastAPI, Python",
     "factsFocusLabel": "Spécialisation",

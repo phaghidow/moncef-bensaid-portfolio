@@ -68,9 +68,6 @@ export async function About() {
             {/* 3. Fiche : parcours -> socle -> spécialisation */}
             <Reveal>
               <dl className="border-t border-border">
-                <FactRow label={t("factsEducationLabel")}>
-                  {t("factsEducation")}
-                </FactRow>
                 <FactRow label={t("factsFoundationLabel")}>
                   {t("factsFoundation")}
                 </FactRow>

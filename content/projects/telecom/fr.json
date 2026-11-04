@@ -1,11 +1,11 @@
 {
   "index": "01",
-  "period": "2025 — Projet de fin d'études",
+  "period": "2026 — Projet de fin d'études",
   "role": "Développeur Full Stack — Algérie Télécom (DSI)",
   "title": "Plateforme web de gestion de projets",
   "description": "Conception et développement d'une plateforme interne pour la Division des Systèmes d'Information, en collaboration directe avec les encadrants de la DSI pour l'analyse des besoins et la validation.",
   "client": "Algérie Télécom",
-  "year": "2025",
+  "year": "2026",
   "metrics": [
     { "value": "42", "label": "écrans fonctionnels" },
     { "value": "26", "label": "tables en base de données" },

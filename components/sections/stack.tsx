@@ -146,10 +146,10 @@ export async function Stack() {
                 aria-hidden="true"
                 className="h-1.5 w-1.5 rounded-full bg-accent"
               />
-              {t("core")}
+              <span className="uppercase">{t("core")}</span>
             </p>
             <p className="font-mono text-xs tabular-nums text-text-muted">
-              {t("count", { count: techs.length })}
+              <span className="uppercase">{t("count", { count: techs.length })}</span>
             </p>
           </div>
         </Reveal>

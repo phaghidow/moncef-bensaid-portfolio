@@ -1,11 +1,11 @@
 {
   "index": "01",
-  "period": "2025 — Final year project",
+  "period": "2026 — Final year project",
   "role": "Full Stack Developer — Algérie Télécom (DSI)",
   "title": "Project management web platform",
   "description": "Design and development of an internal platform for the Information Systems Division, working directly with DSI supervisors on requirements analysis and validation.",
   "client": "Algérie Télécom",
-  "year": "2025",
+  "year": "2026",
   "metrics": [
     { "value": "42", "label": "functional screens" },
     { "value": "26", "label": "database tables" },

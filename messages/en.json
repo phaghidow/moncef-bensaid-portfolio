@@ -83,21 +83,21 @@
       "telecom": {
         "role": "Full Stack Developer — Intern",
         "company": "Algérie Télécom (DSI)",
-        "period": "April — July 2025",
+        "period": "APRIL — JULY 2025",
         "location": "El Mohammadia, Algiers",
         "description": "Designed and developed a project management web platform (Laravel / Vue.js) for the Information Systems Division, from requirements analysis through functional validation."
       },
       "freelance": {
         "role": "Python Developer — Freelance",
         "company": "SPA AADL Gest-Immo",
-        "period": "July — November 2024",
+        "period": "JULY — NOVEMBER 2024",
         "location": "Les Bananiers, Algiers",
         "description": "Developed a desktop application that automated the evaluation of 50+ tender files, reducing evaluation time by over 70%."
       },
       "teacher": {
         "role": "Teacher — Private school",
         "company": "Middle and secondary school levels",
-        "period": "March — June 2025",
+        "period": "MARCH — JUNE 2025",
         "location": "Birtouta, Algiers",
         "description": "Taught mathematics and physics while adapting learning materials and providing individualized student support."
       }
@@ -120,12 +120,13 @@
       "bac": {
         "degree": "Baccalaureate — Experimental Sciences",
         "school": "Ahmed Serir High School",
-        "period": "2022"
+        "period": "2022",
+        "note": "Very good honors"
       },
       "code213": {
         "degree": "Certificate — Coding with Python",
         "school": "Code 213 School",
-        "period": "July — October 2024",
+        "period": "JUL. — OCT. 2024",
         "note": "OOP · Web development · Data Science"
       }
     }
@@ -137,8 +138,6 @@
     "quote": "I build software, and I’m specializing where it has to hold up: <mark>networks, IoT, cybersecurity</mark>.",
     "seal": "NETWORKS • IOT • CYBERSECURITY • DEVELOPMENT •\u00a0",
     "bio": "I’m a Full Stack developer who has designed and shipped web and desktop applications for real organizations, from requirements analysis to production. Now in a Master’s in Networks and Embedded Systems, I’m steering my practice toward networks, IoT and cybersecurity: I learn fast, and I want to understand what runs, and protects, the code I write.",
-    "factsEducationLabel": "Education",
-    "factsEducation": "Master’s in Networks and Embedded Systems — University of Algiers 1",
     "factsFoundationLabel": "Foundation",
     "factsFoundation": "Full Stack development — Laravel, Vue.js, React, FastAPI, Python",
     "factsFocusLabel": "Specializing in",

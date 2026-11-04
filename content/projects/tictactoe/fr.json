@@ -1,11 +1,11 @@
 {
   "index": "04",
-  "period": "2026 — Projet personnel",
+  "period": "2025 — Projet personnel",
   "role": "Développement mobile — conception et réalisation",
   "title": "Tic-Tac-Toe — mes premiers pas avec Flutter",
   "description": "Première expérience mobile : explorer Flutter et Dart en donnant vie à un Tic-Tac-Toe jouable à deux ou contre une IA.",
   "client": "Projet personnel",
-  "year": "2026",
+  "year": "2025",
   "metrics": [
     { "value": "2", "label": "modes : duel local ou partie contre l’IA" },
     { "value": "3×3", "label": "cases pour construire sa stratégie" },

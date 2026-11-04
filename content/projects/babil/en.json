@@ -1,6 +1,6 @@
 {
   "index": "05",
-  "period": "2025–2026 — Master’s / HCI lab",
+  "period": "2025 — Master’s / HCI lab",
   "role": "Interface design and Java Swing development",
   "contextBadge": "Master’s · HCI lab",
   "headerRole": "UI/UX · Java Swing",
@@ -13,7 +13,7 @@
   "title": "Bäbil — online library",
   "description": "A university HCI project for an online library: browsing, bag and payment flows designed in Figma and implemented in Java Swing.",
   "client": "University project",
-  "year": "2026",
+  "year": "2025",
   "metrics": [
     { "value": "11", "label": "interface screenshots" },
     { "value": "02", "label": "pages in the project brief" },

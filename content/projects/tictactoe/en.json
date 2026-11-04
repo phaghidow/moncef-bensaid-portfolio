@@ -1,11 +1,11 @@
 {
   "index": "04",
-  "period": "2026 — Personal project",
+  "period": "2025 — Personal project",
   "role": "Mobile development — design and implementation",
   "title": "Tic-Tac-Toe — my first steps with Flutter",
   "description": "My first mobile project: exploring Flutter and Dart by bringing a Tic-Tac-Toe game to life, for two players or against AI.",
   "client": "Personal project",
-  "year": "2026",
+  "year": "2025",
   "metrics": [
     { "value": "2", "label": "ways to play: local duel or AI opponent" },
     { "value": "3×3", "label": "squares to build a strategy" },

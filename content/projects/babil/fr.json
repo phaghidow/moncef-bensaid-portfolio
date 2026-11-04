@@ -1,6 +1,6 @@
 {
   "index": "05",
-  "period": "2025–2026 — Master / TP IHM",
+  "period": "2025 — Master / TP IHM",
   "role": "Conception de l’interface et développement Java Swing",
   "contextBadge": "Master · TP IHM",
   "headerRole": "UI/UX · Java Swing",
@@ -13,7 +13,7 @@
   "title": "Bäbil — bibliothèque en ligne",
   "description": "Un projet universitaire d’IHM autour d’une bibliothèque en ligne : parcours de consultation, panier et paiement, maquettés dans Figma puis développés en Java Swing.",
   "client": "Projet universitaire",
-  "year": "2026",
+  "year": "2025",
   "metrics": [
     { "value": "11", "label": "captures d’interface" },
     { "value": "02", "label": "pages du cahier des charges" },

@@ -39,7 +39,7 @@ export async function Hero() {
         className="relative mx-auto flex min-h-screen max-w-container flex-col justify-center px-6 pb-20 pt-28 md:px-8 md:pb-16 md:pt-24"
       >
         {/* Masthead : positionnement + localisation */}
-        <div className="-translate-y-4 mb-10 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-border pb-4 md:-translate-y-6 md:mb-14">
+        <div className="-translate-y-8 mb-10 flex flex-wrap items-center justify-between gap-x-6 gap-y-2 border-b border-border pb-4 md:-translate-y-10 md:mb-14">
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-text-muted">
             <span className="hidden sm:inline">{t("kicker")}</span>
             <span className="sm:hidden">{t("kickerMobile")}</span>
